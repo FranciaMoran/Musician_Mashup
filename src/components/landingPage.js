@@ -9,8 +9,7 @@ export default class Landing extends React.Component {
     }
     goToLogin(event) {
         event.preventDefault();
-        this.props.history.push(`/Login`);
-        alert("hey");
+        this.props.history.push(`/login`);
     }
 
     render() {
