@@ -2,6 +2,19 @@
   margin-top: 8%;
   text-align: center;
   margin-bottom: 5%;
+  color: white;
+}
+
+#login-page {
+  background-color: #1f1f14;
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top: 3%;
+  height: 640px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #cccc00;
+  border-radius: 50px;
 }
 
 .login-inputs {

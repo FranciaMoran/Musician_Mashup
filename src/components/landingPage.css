@@ -1,33 +1,91 @@
 #name-of-app {
+  font-family: 'Questrial', sans-serif;
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 8%;
+  padding-top: 5%;
+  color: white;
+  font-size: 60px;
+}
+
+#landing-page {
+  background-color: #1f1f14;
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top: 3%;
+  height: 640px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #cccc00;
+  border-radius: 50px;
+}
+
+
+html {
+  background-image: url(mmbackground2.jpg);
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #slogan {
   text-align: center;
-  margin-bottom: 8%;
+  margin-bottom: 18%;
+  color: white;
 }
 
 #app-explained {
-  margin-left: auto;
-  margin-right: auto;
-  width: 45%;
+  text-align: center;
+  padding-right: 15%;
+  padding-left: 15%;
+  margin-bottom: 8%;
+  font-size: 20px;
+  color: white;
 }
 
 #get-started-button {
-  margin-left: 40%;
-  margin-right: 40%;
-  width: 20%;
-  height: 75px;
-  font-size: 25px;
+  font-family: 'Questrial', sans-serif;
+  margin-left: 35%;
+  margin-right: 35%;
+  width: 30%;
+  height: 15%;
+  font-size: 10px;
   margin-bottom: 5%;
+  border-width: 5px;
+  border-color: #660033;
+  border-radius: 10px;
+  background-color: #400080; 
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: 100;
+  box-shadow: 0px 1px 4px -2px #333;
+  text-shadow: 0px -1px #333;
+}
+
+#get-started-button:after{
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+}
+
+#get-started-button:hover {
+  color: #3366ff;
+  cursor: pointer;
 }
 
 #demo-login {
+  color: white;
   text-align: center;
 }
 
 #demo-login-description {
+  color: white;
   text-align: center;
 }
 

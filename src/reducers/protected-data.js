@@ -1,4 +1,4 @@
-import {
+ import {
     FETCH_PROTECTED_DATA_SUCCESS,
     FETCH_PROTECTED_DATA_ERROR
 } from '../actions/protected-data';

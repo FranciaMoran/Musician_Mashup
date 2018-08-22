@@ -16,6 +16,10 @@ export class Login extends React.Component {
     onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
     }
+     goToDashboard(event) {
+        event.preventDefault();
+        this.props.history.push(`/dashboard`);
+    }
 
     render() {
         let error;
@@ -28,6 +32,7 @@ export class Login extends React.Component {
         }
         return (
             <div>
+            <div id="login-page">
             <h1 id="login-title">Login</h1>
             <form className="login-inputs" 
             onSubmit={this.props.handleSubmit(values =>
@@ -41,9 +46,16 @@ export class Login extends React.Component {
     <label>Password:</label>
     <input type="text"></input>
     </div>
-  <button>Submit</button>
+  <button  onClick={e => this.goToDashboard(e)}>Submit</button>
   </form>
   <button id="create-new-account-button" onClick={e => this.goToCreateAccount(e)}>Create a new account</button>
+  <h3 id="demo-login">Demo Login</h3>
+                    <p id="demo-login-description">You can use this login to see an example of a profile and the home dashboard.</p>
+                    <ul>
+                        <li className="li">Username: blank</li>
+                        <li className="li">Password: blank</li>
+                    </ul>
+  </div>
   </div>
         );
     }

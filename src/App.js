@@ -4,6 +4,7 @@ import Landing from './components/landingPage'
 import './App.css';
 import {BrowserRouter as Router, Route, Link, withRouter} from 'react-router-dom';
 import Login from './components/loginPage'
+import Dashboard from './components/dashboard'
 import CreateAccount from './components/createAccount'
 import {refreshAuthToken} from './actions/auth';
 import {connect} from 'react-redux';
@@ -45,6 +46,7 @@ render() {
       <Route exact path="/" component={Landing}/>
       <Route exact path="/login" component={Login}/>
       <Route exact path="/createAccount" component={CreateAccount}/>
+      <Route exact path="/dashboard" component={Dashboard}/>
       </main>
     );
 }

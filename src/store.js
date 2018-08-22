@@ -24,3 +24,4 @@ if (authToken) {
 }
 
 export default store;
+
