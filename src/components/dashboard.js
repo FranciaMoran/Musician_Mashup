@@ -1,6 +1,7 @@
 import React from 'react'
 import './dashboard.css'
 import Profile from './profile'
+import BandSection from './bandSection'
 
 
 
@@ -12,8 +13,7 @@ export default class Dashboard extends React.Component {
 	               <h1 id="dashboard-title">My Dashboard</h1>
                    <Profile/>
                         <h2 id="invites">invites</h2>
-    <h2 id="bands">Band(s):</h2>
-    <button id="create-a-band">Create a Band</button>
+    <BandSection/>
     </div>
     </div>
 	);
