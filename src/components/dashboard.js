@@ -2,6 +2,9 @@ import React from 'react'
 import './dashboard.css'
 import Profile from './profile'
 import BandSection from './bandSection'
+import {connect} from 'react-redux';
+import requiresLogin from './requires-login';
+import {fetchProtectedData} from '../actions/protected-data';
 
 
 

@@ -21,30 +21,33 @@ export class CreateAccount extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.props.handleSubmit(values =>
+            <div>
+            <div id="create-account-page">
+            <h1 id="create-account-title">Create Account</h1>
+            <form
+                className="login-form"
+                onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-      <h1 id="name-of-app">Musician Mashup</h1>
-      <h2 id="create-account-title">Create Account</h2>
-                 <label htmlFor="firstName">First name</label>
+                <label className="create-account-labels" htmlFor="firstName">First name</label>
                 <Field component={Input} type="text" name="firstName" />
-                <label htmlFor="lastName">Last name</label>
+                <label className="create-account-labels" htmlFor="lastName">Last name</label>
                 <Field component={Input} type="text" name="lastName" />
-                <label htmlFor="username">Username</label>
+                <label className="create-account-labels" htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     validate={[required, nonEmpty, isTrimmed]}
                 />
-                <label htmlFor="password">Password</label>
+                <label className="create-account-labels" htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     validate={[required, passwordLength, isTrimmed]}
                 />
-                <label htmlFor="passwordConfirm">Confirm password</label>
+                <label className="create-account-labels" htmlFor="passwordConfirm">Confirm password</label>
                 <Field
                     component={Input}
                     type="password"
@@ -57,6 +60,8 @@ export class CreateAccount extends React.Component {
                     Register
                 </button>
             </form>
+            </div>
+            </div>
         );
     }
 }
