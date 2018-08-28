@@ -1,24 +1,12 @@
 import React from 'react';
-
-import './loginForm.css';
-import {login} from '../actions/auth';
-import Input from './input';
-import {required, nonEmpty} from '../validators';
 import {Field, reduxForm, focus} from 'redux-form';
+import Input from './input';
+import {login} from '../actions/auth';
+import {required, nonEmpty} from '../validators';
 
 export class LoginForm extends React.Component {
-
-    goToCreateAccount(event) {
-        event.preventDefault();
-        this.props.history.push(`/createAccount`);
-    }
-
     onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
-    }
-     goToDashboard(event) {
-        event.preventDefault();
-        this.props.history.push(`/dashboard`);
     }
 
     render() {
@@ -30,16 +18,14 @@ export class LoginForm extends React.Component {
                 </div>
             );
         }
-     return (
-     <div>
+        return (
             <form
-                className="login-inputs"
+                className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
                 {error}
-                 <div id="username-input">
-                <label id="username-label" htmlFor="username">Username</label>
+                <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
@@ -47,9 +33,7 @@ export class LoginForm extends React.Component {
                     id="username"
                     validate={[required, nonEmpty]}
                 />
-                </div>
-                 <div id="password-input">
-                <label  id="password-label" htmlFor="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
@@ -57,17 +41,17 @@ export class LoginForm extends React.Component {
                     id="password"
                     validate={[required, nonEmpty]}
                 />
-                </div>
                 <button disabled={this.props.pristine || this.props.submitting}>
-                    Submit
+                    Log in
                 </button>
             </form>
-            </div>
         );
     }
-}  
+}
 
 export default reduxForm({
     form: 'login',
     onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
 })(LoginForm);
+
+

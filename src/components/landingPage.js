@@ -1,20 +1,18 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
+import {Link, Redirect} from 'react-router-dom';
 import './landingPage.css';
+import LoginForm from './loginForm';
 
-
-export default class Landing extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-    goToLogin(event) {
+export default class LandingPage extends React .Component {
+     goToLogin(event) {
         event.preventDefault();
-        this.props.history.push(`/login`);
+        this.props.history.push(`/loginscreen`);
     }
-
-    render() {
-        return (
-            <div>
+   
+   render() {
+    return (
+        <div>
             <div id="landing-page">
                 <h1 id="name-of-app">Musician Mashup</h1>
                 <h2 id="slogan">Get in contact with musicians to form a band with today!</h2>
@@ -22,6 +20,10 @@ export default class Landing extends React.Component {
                     <button id="get-started-button" onClick={e => this.goToLogin(e)}>Get Started!</button>
                     </div>
             </div>
-        );
-    }
+    );
 }
+}
+
+
+
+

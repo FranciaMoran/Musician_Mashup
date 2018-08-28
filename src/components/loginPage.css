@@ -11,9 +11,10 @@
 }
 
 #login-title {
-  margin-top: 8%;
+  padding-top: 0;
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 8%;
+  font-size: 50px;
   color: white;
 }
 
@@ -24,4 +25,31 @@
   height: 60px;
   font-size: 15px;
   margin-bottom: 5%;
+}
+
+#login-name-of-app {
+  font-family: 'Questrial', sans-serif;
+  text-align: center;
+  margin-bottom: 5%;
+  padding-top: 0;
+  color: white;
+  font-size: 40px;
+}
+
+#create-new-account-button {
+  font-family: 'Questrial', sans-serif;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-bottom: 5%;
+  border-width: 5px;
+  border-color: #660033;
+  border-radius: 10px;
+  background-color: #400080; 
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: 100;
+  box-shadow: 0px 1px 4px -2px #333;
+  text-shadow: 0px -1px #333;
 }

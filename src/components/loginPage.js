@@ -1,36 +1,26 @@
 import React from 'react';
-import {Link, Redirect} from 'react-router-dom';
-import './loginPage.css';
 import {connect} from 'react-redux';
-import {login} from '../actions/auth';
+import {Link, Redirect} from 'react-router-dom';
+
 import LoginForm from './loginForm';
-import Input from './input';
-import {required, nonEmpty} from '../validators';
-import {Field, reduxForm, focus} from 'redux-form';
 
-export class LoginPage extends React.Component {
-          goToCreateAccount(event) {
-        event.preventDefault();
-        this.props.history.push(`/createAccount`);
+export function LandingPage(props) {
+    // If we are logged in redirect straight to the user's dashboard
+    if (props.loggedIn) {
+        return <Redirect to="/dashboard" />;
     }
 
-    render() {
-        
-     return (
-        <div>
-        <div id="login-page">
-     <h1 id="login-title">Login</h1>
+    return (
+        <div className="home">
+            <h2>Welcome to Foo App</h2>
             <LoginForm />
-                <button id="create-new-account-button" onClick={e => this.goToCreateAccount(e)}>Create a new account</button>
-                </div>
-                </div>
-        );
-    }
-}  
+            <Link to="/register">Register</Link>
+        </div>
+    );
+}
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(LoginPage);
-
+export default connect(mapStateToProps)(LandingPage);
