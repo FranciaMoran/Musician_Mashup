@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
-
+import './loginPage.css';
 import LoginForm from './loginForm';
 
 export function LandingPage(props) {
@@ -12,15 +12,26 @@ export function LandingPage(props) {
 
     return (
         <div className="home">
-            <h2>Welcome to Foo App</h2>
+         <div id="login-page">
+            <h1 id="login-title">Login</h1>
             <LoginForm />
-            <Link to="/register">Register</Link>
+            <Link to="/register">Create Account</Link>
+  <h3 id="demo-login">Demo Login</h3>
+                    <p id="demo-login-description">You can use this login to see an example of a profile and the home dashboard.</p>
+                    <ul>
+                        <li className="li">Username: blank</li>
+                        <li className="li">Password: blank</li>
+                    </ul>
+        </div>
         </div>
     );
 }
+
+
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null
 });
 
 export default connect(mapStateToProps)(LandingPage);
+
