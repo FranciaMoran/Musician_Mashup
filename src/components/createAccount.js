@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
@@ -63,3 +63,4 @@ export default reduxForm({
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('registration', Object.keys(errors)[0]))
 })(RegistrationForm);
+*/

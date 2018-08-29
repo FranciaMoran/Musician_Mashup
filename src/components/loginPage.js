@@ -14,7 +14,7 @@ export function LoginPage(props) {
          <div id="login-page">
             <h1 id="login-title">Login</h1>
             <LoginForm />
-            <Link to="/register">Create Account</Link>
+            <Link to="/register" id="create-new-account">Create Account</Link>
   <h3 id="demo-login">Demo Login</h3>
                     <p id="demo-login-description">You can use this login to see an example of a profile and the home dashboard.</p>
                     <ul>
