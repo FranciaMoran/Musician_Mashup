@@ -2,8 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
+import editProfile from '../actions/profiledb'
+
 
 export class Profile extends React.Component {
+    /*
+     onSubmit(values) {
+        return this.props.dispatch(editProfile(values.name, values.location, values.genre, values.cell, values.email));
+    }
+*/
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
     }
@@ -12,15 +19,6 @@ export class Profile extends React.Component {
         this.state = {
             editing: false
         }
-    }
-
-    onSubmit(event) {
-        event.preventDefault();
-        const text = this.textInput.value.trim();
-        if (text && this.props.onAdd) {
-            this.props.onAdd(text);
-        }
-        this.textInput.value = '';
     }
 
     setEditing(editing) {
@@ -43,21 +41,21 @@ export class Profile extends React.Component {
                             </div>
                             <div className="lines">
                                 <label>Location: </label>
-                                <p>Chicago</p>
+                                <p>{this.props.protectedData}</p>
                             </div>
                             <div className="lines">
                                 <label>Instrument: </label>
-                                <p>Guitar</p>
+                                <p></p>
                             </div>
                             <div className="lines">
                                 <label>Genre(s) of Music: </label>
-                                <p>Jazz</p>
+                                <p></p>
                             </div>
                             <p id="contact">Your Contact Info</p>
-                            <label>cell: </label>
-                            <p>(925)482-5973</p>
+                            <label>Cell: </label>
+                            <p></p>
                             <label>Email: </label>
-                            <p>franciam115@gmail.com</p>
+                            <p></p>
                             <button type="button" onClick={() => this.setEditing(true)}>Edit Profile</button>
                         </div>
                         </div>
@@ -100,8 +98,24 @@ export class Profile extends React.Component {
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
-        name: `${currentUser.firstName} ${currentUser.lastName}`
+        name: `${currentUser.firstName} ${currentUser.lastName}`,
+        protectedData: state.protectedData.data
     };
 };
 
 export default requiresLogin()(connect(mapStateToProps)(Profile));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

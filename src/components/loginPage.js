@@ -18,8 +18,8 @@ export function LoginPage(props) {
   <h3 id="demo-login">Demo Login</h3>
                     <p id="demo-login-description">You can use this login to see an example of a profile and the home dashboard.</p>
                     <ul>
-                        <li className="li">Username: blank</li>
-                        <li className="li">Password: blank</li>
+                        <li className="li">Username: Lennon11</li>
+                        <li className="li">Password: lennon1111</li>
                     </ul>
         </div>
         </div>

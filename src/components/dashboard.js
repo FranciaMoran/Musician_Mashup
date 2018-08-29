@@ -7,19 +7,12 @@ import Profile from './profile'
 import BandSection from './bandSection'
 import './dashboard.css'
 
-export class Dashboard extends React.Component {
-    componentDidMount() {
-        this.props.dispatch(fetchProtectedData());
-    }
-
+export default class Dashboard extends React.Component {
     render() {
         return (
             <div className="dashboard">
             <HeaderBar />
             <div id="whole-dashboard">
-                <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
-                    </div>
                  <h1 id="dashboard-title">My Dashboard</h1>
                    <Profile/>
                         <h2 id="invites">invites</h2>
@@ -30,11 +23,4 @@ export class Dashboard extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    const {currentUser} = state.auth;
-    return {
-        protectedData: state.protectedData.data
-    };
-};
 
-export default requiresLogin()(connect(mapStateToProps)(Dashboard));
