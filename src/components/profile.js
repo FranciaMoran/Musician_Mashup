@@ -1,7 +1,12 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import requiresLogin from './requires-login';
+import {fetchProtectedData} from '../actions/protected-data';
 
-
-export default class Profile extends React.Component {
+export class Profile extends React.Component {
+    componentDidMount() {
+        this.props.dispatch(fetchProtectedData());
+    }
     constructor(props) {
         super(props);
         this.state = {
@@ -34,7 +39,7 @@ export default class Profile extends React.Component {
                             <h2>Profile</h2>
                             <div className="lines">
                                 <label>Name: </label>
-                                <p>Brandon</p>
+                                <p className="dashboard-name">{this.props.name}</p>
                             </div>
                             <div className="lines">
                                 <label>Location: </label>
@@ -91,3 +96,12 @@ export default class Profile extends React.Component {
 }
 
 }
+
+const mapStateToProps = state => {
+    const {currentUser} = state.auth;
+    return {
+        name: `${currentUser.firstName} ${currentUser.lastName}`
+    };
+};
+
+export default requiresLogin()(connect(mapStateToProps)(Profile));
