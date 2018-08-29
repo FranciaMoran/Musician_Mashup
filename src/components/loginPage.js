@@ -5,7 +5,6 @@ import './loginPage.css';
 import LoginForm from './loginForm';
 
 export function LoginPage(props) {
-    // If we are logged in redirect straight to the user's dashboard
     if (props.loggedIn) {
         return <Redirect to="/dashboard" />;
     }
