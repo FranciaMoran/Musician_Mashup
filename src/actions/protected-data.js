@@ -13,6 +13,18 @@ export const fetchProtectedDataError = error => ({
     error
 });
 
+export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
+export const fetchDataSuccess = data => ({
+    type: FETCH_DATA_SUCCESS,
+    data
+});
+
+export const FETCH_DATA_ERROR = 'FETCH_DATA_ERROR';
+export const fetchDataError = error => ({
+    type: FETCH_DATA_ERROR,
+    error
+});
+
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/protected`, {
@@ -28,3 +40,22 @@ export const fetchProtectedData = () => (dispatch, getState) => {
             dispatch(fetchProtectedDataError(err));
         });
 };
+
+export const fetchData = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/profiles`, {
+        method: 'GET',
+        headers: {
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(({data}) => dispatch(fetchDataSuccess(data)))
+        .catch(err => {
+            dispatch(fetchDataError(err));
+        });
+};
+
+
+          

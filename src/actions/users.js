@@ -4,6 +4,7 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
 export const registerUser = user => dispatch => {
+    alert("hello there");
     return fetch(`${API_BASE_URL}/users`, {
         method: 'POST',
         headers: {
@@ -24,3 +25,30 @@ export const registerUser = user => dispatch => {
             }
         });
 };
+
+export const editProfile = profileInfo => dispatch => {
+    return (
+        fetch(`${API_BASE_URL}/profiles`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(profileInfo)
+        })
+            .then(res => normalizeResponseErrors(res))
+            .then(res => res.json())
+            .catch(err => {
+                alert("hello");
+                const message =
+                        'Does not work'
+                return Promise.reject(
+                    new SubmissionError({
+                        _error: message
+                    })
+                );
+            })
+    );
+};
+
+
+  

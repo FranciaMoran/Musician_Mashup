@@ -2,17 +2,16 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {fetchProtectedData} from '../actions/protected-data';
-import editProfile from '../actions/profiledb'
-
+import ProfileForm from './profileForm'
+import {fetchData} from '../actions/protected-data';
 
 export class Profile extends React.Component {
-    /*
-     onSubmit(values) {
-        return this.props.dispatch(editProfile(values.name, values.location, values.genre, values.cell, values.email));
-    }
-*/
     componentDidMount() {
         this.props.dispatch(fetchProtectedData());
+    }
+
+    componentDidMount() {
+        this.props.dispatch(fetchData());
     }
     constructor(props) {
         super(props);
@@ -41,7 +40,7 @@ export class Profile extends React.Component {
                             </div>
                             <div className="lines">
                                 <label>Location: </label>
-                                <p>{this.props.protectedData}</p>
+                                <p>{this.props.location}</p>
                             </div>
                             <div className="lines">
                                 <label>Instrument: </label>
@@ -64,32 +63,9 @@ export class Profile extends React.Component {
 
    return (
     <div>
-            <form id="profile">
-                            <h2>Profile</h2>
-                            <div className="lines">
-                                <label>Name: </label>
-                                <input type="text"></input>
-                            </div>
-                            <div className="lines">
-                                <label>Location: </label>
-                                <input type="text"></input>
-                            </div>
-                            <div className="lines">
-                                <label>Instrument: </label>
-                                <input type="text"></input>
-                            </div>
-                            <div className="lines">
-                                <label>Genre(s) of Music: </label>
-                                <input type="text"></input>
-                            </div>
-                            <p id="contact">Your Contact Info</p>
-                            <label>cell: </label>
-                            <input type="text"></input>
-                            <label>Email:</label>
-                            <input></input>
-                            <button>Confirm Changes</button>
-                        </form>
-                        </div>
+    <h2 id="profile">Profile</h2>
+    <ProfileForm />       
+    </div>
    )
 }
 
@@ -99,15 +75,12 @@ const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
         name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data
+        protectedData: state.protectedData.data,
+        location: `${currentUser.location}`
     };
 };
 
 export default requiresLogin()(connect(mapStateToProps)(Profile));
-
-
-
-
 
 
 
