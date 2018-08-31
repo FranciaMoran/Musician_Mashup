@@ -1,0 +1,56 @@
+import React from 'react';
+import {Field, reduxForm, focus} from 'redux-form';
+import {createBand} from '../actions/protected-data';
+import {connect} from 'react-redux';
+import requiresLogin from './requires-login';
+import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
+import Input from './input';
+import Profile from './profile'
+import {fetchProtectedData} from '../actions/protected-data';
+import './dashboard.css'
+
+
+
+
+export class BandForm extends React.Component {
+	onSubmit(values) {
+        const {bandName} = values;
+        const createBandInfo = {bandName};
+        return this.props
+            .dispatch(createBand(createBandInfo))
+    }
+
+	render() {
+		return (
+        <form
+                className="band-form"
+                onSubmit={this.props.handleSubmit(values =>
+                    this.onSubmit(values)
+                )}
+                >
+                <div className="lines">
+                <label className="create-account-labels" htmlFor="name">Name:</label>
+                <Field component={Input} type="text" name="bandName"/>
+                </div>
+                <button
+                id="register-button"
+                    type="submit">
+                    Confirm Changes
+                </button>
+            </form>
+			)
+}
+}
+
+
+
+export default reduxForm({
+    form: 'band-form',
+    onSubmitFail: (errors, dispatch) =>
+        dispatch(focus('band-form', Object.keys(errors)[0]))
+})(BandForm);
+
+
+
+
+ 

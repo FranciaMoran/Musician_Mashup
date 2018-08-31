@@ -3,7 +3,7 @@ import {Link, Redirect} from 'react-router-dom';
 import './landingPage.css';
 import LoginForm from './loginForm';
 
-export default class LandingPage extends React .Component {
+export default class LandingPage extends React.Component {
      goToLogin(event) {
         event.preventDefault();
         this.props.history.push(`/loginscreen`);

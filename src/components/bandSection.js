@@ -1,7 +1,9 @@
 import React from 'react'
+//import BandForm from './bandForm'
 import './BandSection.css'
 
-export default class Profile extends React.Component {
+
+export default class BandSection extends React.Component {
 	  constructor(props) {
         super(props);
         this.state = {
@@ -27,10 +29,6 @@ export default class Profile extends React.Component {
 		}
 		return (
         <div>
-             <h2 id="band-title">Band(s)</h2>
-             <label>Band Name:</label>
-             <input type="text"></input>
-             <button>Confirm</button>
              </div>
 		)
 	}

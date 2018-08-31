@@ -32,11 +32,13 @@ export const authError = error => ({
     error
 });
 
-const storeAuthInfo = (authToken, dispatch) => {
-    const decodedToken = jwtDecode(authToken);
-    dispatch(setAuthToken(authToken));
-    dispatch(authSuccess(decodedToken.user));
-    saveAuthToken(authToken);
+const storeAuthInfo = (res, dispatch) => {
+    console.log(res);
+    const decodedToken = jwtDecode(res.authToken);
+    console.log(decodedToken);
+    dispatch(setAuthToken(res.authToken));
+    dispatch(authSuccess(res.user));
+    saveAuthToken(res.authToken);
 };
 
 export const refreshAuthToken = () => (dispatch, getState) => {
@@ -73,7 +75,7 @@ export const login = (username, password) => dispatch => {
         })
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
-            .then(({authToken}) => storeAuthInfo(authToken, dispatch))
+            .then(res => storeAuthInfo(res, dispatch))
             .catch(err => {
                 const {code} = err;
                 const message =

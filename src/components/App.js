@@ -8,12 +8,11 @@ import RegistrationPage from './registrationPage';
 import {refreshAuthToken} from '../actions/auth';
 
 export default class App extends React.Component {
+    /*
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
-            // When we are logged in, refresh the auth token periodically
             this.startPeriodicRefresh();
         } else if (prevProps.loggedIn && !this.props.loggedIn) {
-            // Stop refreshing when we log out
             this.stopPeriodicRefresh();
         }
     }
@@ -35,8 +34,7 @@ export default class App extends React.Component {
         }
 
         clearInterval(this.refreshInterval);
-    }
-
+    }*/
     render() {
         return (
             <div className="app">

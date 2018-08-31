@@ -1,12 +1,12 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import {editProfile} from '../actions/users';
+import {editProfile} from '../actions/protected-data';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import {fetchProtectedData} from '../actions/protected-data';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import Input from './input';
 import Profile from './profile'
+import {fetchProtectedData} from '../actions/protected-data';
 import './dashboard.css'
 
 
@@ -16,8 +16,7 @@ export class ProfileForm extends React.Component {
 	onSubmit(values) {
         const {name, location, instrument, genre, cell, email} = values;
         const profileInfo = {name, location, instrument, genre, cell, email};
-        return this.props
-            .dispatch(editProfile(profileInfo))
+        return this.props.dispatch(editProfile(profileInfo))
     }
 
 	render() {

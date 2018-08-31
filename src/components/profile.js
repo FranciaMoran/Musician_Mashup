@@ -10,9 +10,9 @@ export class Profile extends React.Component {
         this.props.dispatch(fetchProtectedData());
     }
 
-    componentDidMount() {
+   /* componentDidMount() {
         this.props.dispatch(fetchData());
-    }
+    }*/
     constructor(props) {
         super(props);
         this.state = {
@@ -75,7 +75,7 @@ const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
         name: `${currentUser.firstName} ${currentUser.lastName}`,
-        protectedData: state.protectedData.data,
+        id: `${currentUser.id}`,
         location: `${currentUser.location}`
     };
 };
@@ -84,7 +84,7 @@ export default requiresLogin()(connect(mapStateToProps)(Profile));
 
 
 
-
+ 
 
 
 
