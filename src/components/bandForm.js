@@ -16,8 +16,7 @@ export class BandForm extends React.Component {
 	onSubmit(values) {
         const {bandName} = values;
         const createBandInfo = {bandName};
-        return this.props
-            .dispatch(createBand(createBandInfo))
+        return this.props.dispatch(createBand(createBandInfo))
     }
 
 	render() {
@@ -29,7 +28,7 @@ export class BandForm extends React.Component {
                 )}
                 >
                 <div className="lines">
-                <label className="create-account-labels" htmlFor="name">Name:</label>
+                <label className="create-account-labels" htmlFor="bandName">Name:</label>
                 <Field component={Input} type="text" name="bandName"/>
                 </div>
                 <button

@@ -1,5 +1,5 @@
 import React from 'react'
-//import BandForm from './bandForm'
+import BandForm from './bandForm'
 import './BandSection.css'
 
 
@@ -29,6 +29,7 @@ export default class BandSection extends React.Component {
 		}
 		return (
         <div>
+        <BandForm/>
              </div>
 		)
 	}

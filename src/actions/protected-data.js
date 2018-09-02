@@ -64,7 +64,7 @@ export const editProfile = profileInfo => (dispatch, getState) => {
     );
 };
 
-/*
+
 export const createBand = createBandInfo => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     alert("three");
@@ -72,7 +72,8 @@ export const createBand = createBandInfo => (dispatch, getState) => {
         fetch(`${API_BASE_URL}/bands`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                 Authorization: `Bearer ${authToken}`
             },
             body: JSON.stringify(createBandInfo)
         })
@@ -86,7 +87,7 @@ export const createBand = createBandInfo => (dispatch, getState) => {
 };
 
   
-
+/*
 export const fetchData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/profiles`, {
