@@ -17,6 +17,7 @@ export class BandForm extends React.Component {
         const {bandName} = values;
         const createBandInfo = {bandName};
         return this.props.dispatch(createBand(createBandInfo))
+        console.log(createBandInfo);
     }
 
 	render() {

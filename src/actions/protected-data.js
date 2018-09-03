@@ -12,7 +12,7 @@ export const fetchProtectedDataError = error => ({
     type: FETCH_PROTECTED_DATA_ERROR,
     error
 });
-/*
+
 export const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 export const fetchDataSuccess = data => ({
     type: FETCH_DATA_SUCCESS,
@@ -23,7 +23,7 @@ export const FETCH_DATA_ERROR = 'FETCH_DATA_ERROR';
 export const fetchDataError = error => ({
     type: FETCH_DATA_ERROR,
     error
-}); */
+}); 
 
 export const fetchProtectedData = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
@@ -40,6 +40,7 @@ export const fetchProtectedData = () => (dispatch, getState) => {
             dispatch(fetchProtectedDataError(err));
         });
 };
+
 
 
 export const editProfile = profileInfo => (dispatch, getState) => {
@@ -80,11 +81,10 @@ export const createBand = createBandInfo => (dispatch, getState) => {
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .catch(err => {
-                const message =
-                        'Does not work'
-            })
+            dispatch(fetchDataError(err));
+        })
     );
-};
+}
 
   
 /*
