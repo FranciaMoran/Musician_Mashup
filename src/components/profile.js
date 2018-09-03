@@ -1,14 +1,14 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import {fetchProtectedData} from '../actions/protected-data';
+//import {fetchProtectedData} from '../actions/protected-data';
 import ProfileForm from './profileForm'
 import {fetchData} from '../actions/protected-data';
 
 export class Profile extends React.Component {
-    componentDidMount() {
+    /*componentDidMount() {
         this.props.dispatch(fetchProtectedData());
-    }
+    }*/
 
    /* componentDidMount() {
         this.props.dispatch(fetchData());
@@ -44,17 +44,17 @@ export class Profile extends React.Component {
                             </div>
                             <div className="lines">
                                 <label>Instrument: </label>
-                                <p></p>
+                                <p>{this.props.instrument}</p>
                             </div>
                             <div className="lines">
                                 <label>Genre(s) of Music: </label>
-                                <p></p>
+                                <p>{this.props.genre}</p>
                             </div>
                             <p id="contact">Your Contact Info</p>
                             <label>Cell: </label>
-                            <p></p>
+                            <p>{this.props.cell}</p>
                             <label>Email: </label>
-                            <p></p>
+                            <p>{this.props.email}</p>
                             <button type="button" onClick={() => this.setEditing(true)}>Edit Profile</button>
                         </div>
                         </div>
@@ -74,9 +74,13 @@ export class Profile extends React.Component {
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
-        name: `${currentUser.firstName} ${currentUser.lastName}`,
+        name: `${currentUser.name}`,
         id: `${currentUser.id}`,
-        location: `${currentUser.location}`
+        location: `${currentUser.location}`,
+        instrument: `${currentUser.instrument}`,
+        genre: `${currentUser.genre}`,
+        cell: `${currentUser.cell}`,
+        email: `${currentUser.email}`
     };
 };
 

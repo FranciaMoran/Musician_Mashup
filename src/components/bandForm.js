@@ -14,8 +14,8 @@ import './dashboard.css'
 
 export class BandForm extends React.Component {
 	onSubmit(values) {
-        const {bandName} = values;
-        const createBandInfo = {bandName};
+        const {bandName, members} = values;
+        const createBandInfo = {bandName, members};
         return this.props.dispatch(createBand(createBandInfo))
         console.log(createBandInfo);
     }
@@ -31,6 +31,26 @@ export class BandForm extends React.Component {
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="bandName">Name:</label>
                 <Field component={Input} type="text" name="bandName"/>
+                </div>
+                <div className="lines">
+                <label className="create-account-labels" htmlFor="members">Member:</label>
+                <Field component={Input} type="text" name="members"/>
+                </div>
+                <div className="lines">
+                <label className="create-account-labels" htmlFor="members">Member:</label>
+                <Field component={Input} type="text" name="members"/>
+                </div>
+                <div className="lines">
+                <label className="create-account-labels" htmlFor="members">Member:</label>
+                <Field component={Input} type="text" name="members"/>
+                </div>
+                <div className="lines">
+                <label className="create-account-labels" htmlFor="members">Member:</label>
+                <Field component={Input} type="text" name="members"/>
+                </div>
+                <div className="lines">
+                <label className="create-account-labels" htmlFor="members">Member:</label>
+                <Field component={Input} type="text" name="members"/>
                 </div>
                 <button
                 id="register-button"
