@@ -87,6 +87,23 @@ export const createBand = createBandInfo => (dispatch, getState) => {
     );
 }
 
+export const fetchProtectedData = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/bands`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then(({data}) => dispatch(fetchProtectedDataSuccess(data)))
+        .catch(err => {
+            dispatch(fetchProtectedDataError(err));
+        });
+};
+
 /*
 export const editBands = profileInfo => (dispatch, getState) => {
     const authToken = getState().auth.authToken;

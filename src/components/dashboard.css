@@ -29,8 +29,10 @@
 }
 
 #dashboard-title {
+	margin-top: 2%;
 	margin-left: 3%;
 	color: white;
+	display: inline;
 }
 
 #invites {
@@ -42,4 +44,10 @@
 	width: 10%;
 	margin-left: 20%;
 	margin-right: 70%;
+}
+
+#log-out {
+  margin-top: 1%;
+  margin-right: 2%;
+  float: right;
 }

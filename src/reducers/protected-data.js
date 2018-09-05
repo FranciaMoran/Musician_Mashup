@@ -4,7 +4,7 @@
 } from '../actions/protected-data';
 
 const initialState = {
-    data: '',
+    data: null,
     error: null
 };
 

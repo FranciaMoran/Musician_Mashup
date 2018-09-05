@@ -6,6 +6,7 @@ import {clearAuth} from '../actions/auth';
 import {clearAuthToken} from '../local-storage';
 import Profile from './profile'
 import BandSection from './bandSection'
+import SearchSection from './searchSection'
 import './dashboard.css'
 
 export class Dashboard extends React.Component {
@@ -14,15 +15,20 @@ export class Dashboard extends React.Component {
         clearAuthToken();
     }
 
+    goToSearch(event) {
+        event.preventDefault();
+        this.props.history.push(`/search`);
+    }
+
     render() {
         return (
             <div className="dashboard">
             <div id="whole-dashboard">
-            <button onClick={() => this.logOut()}>Log out</button>
+            <button id="log-out" onClick={() => this.logOut()}>Log out</button>
                  <h1 id="dashboard-title">My Dashboard</h1>
                    <Profile/>
-                        <h2 id="invites">invites</h2>
-    <BandSection/>
+    <BandSection />
+    <button onClick={e => this.goToSearch(e)}>Search Musicians</button>
             </div>
             </div>
         );

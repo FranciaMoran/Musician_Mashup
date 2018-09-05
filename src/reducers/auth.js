@@ -7,8 +7,8 @@ import {
 } from '../actions/auth';
 
 const initialState = {
-    authToken: null, // authToken !== null does not mean it has been validated
-    currentUser: {Username: "test"},
+    authToken: null, 
+    currentUser: null,
     loading: false,
     error: null
 };

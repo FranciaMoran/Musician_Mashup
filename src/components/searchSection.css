@@ -1,0 +1,26 @@
+#SearchSection {
+  background-color: #1f1f14;
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top: 3%;
+  height: 640px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #cccc00;
+  border-radius: 50px;
+}
+
+#search-title {
+	color: white;
+}
+
+.labels {
+	color: white;
+}
+
+#by-name {
+	float: right;
+}
+
+#by-location {
+}
