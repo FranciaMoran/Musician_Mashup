@@ -1,12 +1,11 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import {editProfile} from '../actions/protected-data';
+import {editProfile} from '../actions/auth';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import Input from './input';
 import Profile from './profile'
-import {fetchProtectedData} from '../actions/protected-data';
 import './dashboard.css'
 
 
@@ -33,7 +32,7 @@ export class ProfileForm extends React.Component {
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="location">Location:</label>
-                <Field component={Input} type="text" name="location" />
+                <Field component={Input} type="text" name="location"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="instrument">Instrument:</label>
@@ -60,8 +59,6 @@ export class ProfileForm extends React.Component {
 			)
 }
 }
-
-
 
 export default reduxForm({
     form: 'profile-form',

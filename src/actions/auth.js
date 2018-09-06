@@ -92,6 +92,26 @@ export const login = (username, password) => dispatch => {
     );
 };
 
+export const editProfile = profileInfo => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    const userId = getState().auth.currentUser.id;
+    return (
+        fetch(`${API_BASE_URL}/users/${userId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                 Authorization: `Bearer ${authToken}`
+            },
+            body: JSON.stringify(profileInfo)
+        })
+            .then(res => normalizeResponseErrors(res))
+            .then(res => res.json())
+            .catch(err => {
+                const message =
+                        'Does not work'
+            })
+    );
+};
 
 
 

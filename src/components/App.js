@@ -9,7 +9,6 @@ import RegistrationPage from './registrationPage';
 import {refreshAuthToken} from '../actions/auth';
 
 export default class App extends React.Component {
-    /*
     componentDidUpdate(prevProps) {
         if (!prevProps.loggedIn && this.props.loggedIn) {
             this.startPeriodicRefresh();
@@ -25,7 +24,7 @@ export default class App extends React.Component {
     startPeriodicRefresh() {
         this.refreshInterval = setInterval(
             () => this.props.dispatch(refreshAuthToken()),
-            60 * 60 * 1000 // One hour
+            60 * 60 * 1000 
         );
     }
 
@@ -35,7 +34,7 @@ export default class App extends React.Component {
         }
 
         clearInterval(this.refreshInterval);
-    }*/
+    }
     render() {
         return (
             <div className="app">

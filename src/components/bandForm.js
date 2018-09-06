@@ -1,14 +1,12 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import {createBand} from '../actions/protected-data';
+import {createBand} from '../actions/bandActions';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import Input from './input';
 import Profile from './profile'
-import {fetchProtectedData} from '../actions/protected-data';
 import './dashboard.css'
-
 
 
 
@@ -32,28 +30,7 @@ export class BandForm extends React.Component {
                 <label className="create-account-labels" htmlFor="bandName">Name:</label>
                 <Field component={Input} type="text" name="bandName"/>
                 </div>
-                <div className="lines">
-                <label className="create-account-labels" htmlFor="members">Member:</label>
-                <Field component={Input} type="text" name="members"/>
-                </div>
-                <div className="lines">
-                <label className="create-account-labels" htmlFor="members">Member:</label>
-                <Field component={Input} type="text" name="members"/>
-                </div>
-                <div className="lines">
-                <label className="create-account-labels" htmlFor="members">Member:</label>
-                <Field component={Input} type="text" name="members"/>
-                </div>
-                <div className="lines">
-                <label className="create-account-labels" htmlFor="members">Member:</label>
-                <Field component={Input} type="text" name="members"/>
-                </div>
-                <div className="lines">
-                <label className="create-account-labels" htmlFor="members">Member:</label>
-                <Field component={Input} type="text" name="members"/>
-                </div>
                 <button
-                id="register-button"
                     type="submit">
                     Confirm Changes
                 </button>
