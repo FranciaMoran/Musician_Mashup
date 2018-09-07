@@ -40,7 +40,7 @@ export const createBand = createBandInfo => (dispatch, getState) => {
     })
        .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then(({bandData}) => dispatch(creatingBand(bandData)))
+        .then((bandData) => dispatch(creatingBand(bandData)))
         .catch(err => {
             dispatch(creatingBandError(err));
         });
