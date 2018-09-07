@@ -65,7 +65,7 @@ export class Profile extends React.Component {
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
-        name: `${currentUser.name}`,
+        name: `${currentUser.firstName} ${currentUser.lastName}`,
         id: `${currentUser.id}`,
         location: `${currentUser.location}`,
         instrument: `${currentUser.instrument}`,

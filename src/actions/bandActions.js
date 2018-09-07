@@ -1,7 +1,7 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
-export const FETCH_BANDS_SUCCESS = 'FETCH_BANDS_SUCCESS';
+/*export const FETCH_BANDS_SUCCESS = 'FETCH_BANDS_SUCCESS';
 export const fetchBandsSuccess = bandData => ({
     type: FETCH_BANDS_SUCCESS,
     bandData
@@ -11,9 +11,19 @@ export const FETCH_BANDS_ERROR = 'FETCH_BANDS_ERROR';
 export const fetchBandsError = error => ({
     type: FETCH_BANDS_ERROR,
     error
+}); */
+
+export const CREATING_BAND = 'CREATING_BAND';
+export const creatingBand = bandData => ({
+    type: CREATING_BAND,
+    bandData
 });
 
-export const CREATE_BAND = 'CREATE_BAND';
+export const CREATING_BAND_ERROR = 'CREATING_BAND_ERROR';
+export const creatingBandError = error => ({
+    type: CREATING_BAND_ERROR,
+    error
+});
 
 
 export const createBand = createBandInfo => (dispatch, getState) => {
@@ -28,19 +38,14 @@ export const createBand = createBandInfo => (dispatch, getState) => {
         },
         body: JSON.stringify(createBandInfo)
     })
-        .then(res => normalizeResponseErrors(res))
+       .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .catch(err => { 
-        dispatch(fetchBandsError(err));
-    })
-    return (
-      {
-        
-        type: CREATE_BAND,
-        bandData: createBandInfo
-      }    
-    )
-}
+        .then(({bandData}) => dispatch(creatingBand(bandData)))
+        .catch(err => {
+            dispatch(creatingBandError(err));
+        });
+};
+
 
 
 

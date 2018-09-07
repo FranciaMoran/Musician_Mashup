@@ -31,7 +31,7 @@ export class BandSection extends React.Component {
 		}
 		return (
         <div>
-        <BandForm/>
+        <BandForm />
              </div>
 		)
 	}
@@ -39,6 +39,7 @@ export class BandSection extends React.Component {
 
 const mapStateToProps = state => {
     return {
+    bandData: state.bandData.bandName    
     };
 };
 
