@@ -1,18 +1,6 @@
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
-/*export const FETCH_BANDS_SUCCESS = 'FETCH_BANDS_SUCCESS';
-export const fetchBandsSuccess = bandData => ({
-    type: FETCH_BANDS_SUCCESS,
-    bandData
-});
-
-export const FETCH_BANDS_ERROR = 'FETCH_BANDS_ERROR';
-export const fetchBandsError = error => ({
-    type: FETCH_BANDS_ERROR,
-    error
-}); */
-
 export const CREATING_BAND = 'CREATING_BAND';
 export const creatingBand = bandData => ({
     type: CREATING_BAND,
@@ -22,6 +10,18 @@ export const creatingBand = bandData => ({
 export const CREATING_BAND_ERROR = 'CREATING_BAND_ERROR';
 export const creatingBandError = error => ({
     type: CREATING_BAND_ERROR,
+    error
+});
+
+export const SHOW_BAND_DATA_SUCCESS = 'SHOW_BAND_DATA_SUCCESS';
+export const showBandDataSuccess = bandData => ({
+    type: SHOW_BAND_DATA_SUCCESS,
+    bandData
+});
+
+export const SHOW_BAND_DATA_ERROR = 'SHOW_BAND_DATA_ERROR';
+export const showBandDataError = error => ({
+    type: SHOW_BAND_DATA_ERROR,
     error
 });
 
@@ -45,6 +45,24 @@ export const createBand = createBandInfo => (dispatch, getState) => {
             dispatch(creatingBandError(err));
         });
 };
+
+export const showBandData = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/bands`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${authToken}`
+        }
+    })
+        .then(res => normalizeResponseErrors(res))
+        .then(res => res.json())
+        .then((bandData) => dispatch(showBandDataSuccess(bandData)))
+        .catch(err => {
+            dispatch(showBandDataError(err));
+        });
+};
+
 
 
 

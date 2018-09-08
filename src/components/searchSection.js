@@ -1,5 +1,4 @@
 import React from 'react'
-import BandForm from './bandForm'
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import NameSearch from './nameSearch'

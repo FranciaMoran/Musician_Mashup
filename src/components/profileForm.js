@@ -28,7 +28,7 @@ export class ProfileForm extends React.Component {
                 >
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="name">Name:</label>
-                <Field component={Input} type="text" name="name"/>
+                <Field component={Input} type="text" name="name" placeholder="testing"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="location">Location:</label>
