@@ -7,23 +7,26 @@ export const creatingBand = bandData => ({
     bandData
 });
 
+export const GET_CREATED_BAND = 'GET_CREATED_BAND';
+export const getCreatedBand = bandData => ({
+    type: GET_CREATED_BAND,
+    bandData
+});
+
 export const CREATING_BAND_ERROR = 'CREATING_BAND_ERROR';
 export const creatingBandError = error => ({
     type: CREATING_BAND_ERROR,
     error
 });
 
-export const SHOW_BAND_DATA_SUCCESS = 'SHOW_BAND_DATA_SUCCESS';
-export const showBandDataSuccess = bandData => ({
-    type: SHOW_BAND_DATA_SUCCESS,
-    bandData
-});
-
-export const SHOW_BAND_DATA_ERROR = 'SHOW_BAND_DATA_ERROR';
-export const showBandDataError = error => ({
-    type: SHOW_BAND_DATA_ERROR,
+export const GET_CREATED_BAND_ERROR = 'GET_CREATED_BAND_ERROR';
+export const getCreatedBandError = error => ({
+    type: GET_CREATED_BAND_ERROR,
     error
 });
+
+
+
 
 
 export const createBand = createBandInfo => (dispatch, getState) => {
@@ -39,29 +42,41 @@ export const createBand = createBandInfo => (dispatch, getState) => {
         body: JSON.stringify(createBandInfo)
     })
        .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .then((bandData) => dispatch(creatingBand(bandData)))
-        .catch(err => {
+       .then(res => res.json())
+       .then((bandData) => dispatch(creatingBand(bandData)))
+       .catch(err => {
             dispatch(creatingBandError(err));
         });
 };
 
-export const showBandData = () => (dispatch, getState) => {
+export const showCreatedBand = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
+    //const userName = getState().auth.currentUser.name;
+    //console.log(userName);
     return fetch(`${API_BASE_URL}/bands`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${authToken}`
-        }
+             Authorization: `Bearer ${authToken}`
+        },
     })
-        .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .then((bandData) => dispatch(showBandDataSuccess(bandData)))
-        .catch(err => {
-            dispatch(showBandDataError(err));
+       .then(res => normalizeResponseErrors(res))
+       .then(res => res.json())
+       .then((bandData) => dispatch(getCreatedBand(bandData)))
+       .catch(err => {
+            dispatch(getCreatedBandError(err));
         });
 };
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -69,6 +84,8 @@ export const showBandData = () => (dispatch, getState) => {
 
 
 /*
+
+
 export const editMembers = profileInfo => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const userId = getState().auth.currentUser.id;
@@ -90,7 +107,7 @@ export const editMembers = profileInfo => (dispatch, getState) => {
             })
     );
 };
-
+/*
 
 export const deleteBand = profileInfo => (dispatch, getState) => {
     const authToken = getState().auth.authToken;

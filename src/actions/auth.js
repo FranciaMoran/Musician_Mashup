@@ -3,6 +3,7 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
+import creatingBand from './bandActions'
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -38,8 +39,10 @@ const storeAuthInfo = (res, dispatch) => {
     //console.log(decodedToken);
     dispatch(setAuthToken(res.authToken));
     dispatch(authSuccess(res.user));
+   //dispatch(creatingBand(res.user.name));
     saveAuthToken(res.authToken);
 };
+
 
 export const refreshAuthToken = () => (dispatch, getState) => {
     dispatch(authRequest());

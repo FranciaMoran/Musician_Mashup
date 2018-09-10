@@ -1,8 +1,7 @@
  import {
     CREATING_BAND,
     CREATING_BAND_ERROR,
-    SHOW_BAND_DATA_SUCCESS,
-    SHOW_BAND_DATA_ERROR
+    GET_CREATED_BAND
 } from '../actions/bandActions';
 
 const initialState = {
@@ -17,19 +16,17 @@ export default function reducer(state = initialState, action) {
             bandData: action.bandData,
             error: null
         });
-    } else if (action.type === CREATING_BAND_ERROR) {
-        return Object.assign({}, state, {
-            error: action.error
-        });
-    } else if (action.type === SHOW_BAND_DATA_SUCCESS) {
+    } else if (action.type === GET_CREATED_BAND) {
+        console.log(action.bandData)
         return Object.assign({}, state, {
             bandData: action.bandData,
             error: null
         });
-    } else if (action.type === SHOW_BAND_DATA_ERROR) {
+    } 
+    else if (action.type === CREATING_BAND_ERROR) {
         return Object.assign({}, state, {
             error: action.error
         });
-    }
+    } 
     return state;
 }
