@@ -3,13 +3,18 @@ import BandForm from './bandForm'
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {showCreatedBand} from '../actions/bandActions';
-import './BandSection.css'
+import {deleteBand} from '../actions/bandActions';
+import './bandSection.css'
 
 export class BandSection extends React.Component {
       componentDidMount() {
         this.props.dispatch(showCreatedBand());
     }
     
+    deletingBand (event) {
+        alert("test");
+        this.props.dispatch(deleteBand())
+    }
 	  constructor(props) {
         super(props);
         this.state = {
@@ -25,28 +30,34 @@ export class BandSection extends React.Component {
     }
 
 	render () {
-        console.log(this.props.bandData);
+        //console.log(this.props.bandData);
         if (!this.props.bandData) {
             return (
                 <div>
-            <p>loading</p>
-            </div>
+             <h2 id="band-title">Band(s)</h2>
+              <button onClick={() => this.setEditing(true)}>Create A New Band</button>
+              </div>
             )
         }
-		if (!this.state.editing) {
-		return( 
-			<div>
-             <h2 id="band-title">Band(s)</h2>
-             {this.props.bandData.map((band, firstBand) => <p key={firstBand}>{band.bandName}</p> )}
-             {this.props.bandData.map((band, firstBand) => <p key={firstBand}>{band.memberOne}</p> )}
-             <button onClick={() => this.setEditing(true)}>Create A New Band</button>
+ else if (this.state.editing) {
+        return ( 
+            <div>
+             <h2 id="band-title">Create Band</h2>
+             <BandForm />
              </div>
-			);
-		}
+             )
+         }
 
-		return (
-        <BandForm />
-		)
+		else if (!this.state.editing) {
+		return ( 
+        <div>
+             <h2 id="band-title">Band(s)</h2>
+             {this.props.bandData.map((band, names) => <p key={names}>{band.bandName}
+             <button onClick={() => this.props.deletingBand}>Delete</button></p>)}
+             <button onClick={() => this.setEditing(true)}>Create A New Band</button>
+              </div>
+			);
+        }
 	}
 }
 

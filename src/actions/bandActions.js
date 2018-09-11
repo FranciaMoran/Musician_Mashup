@@ -47,9 +47,7 @@ export const createBand = createBandInfo => (dispatch, getState) => {
 
 export const showCreatedBand = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    //const userName = getState().auth.currentUser.name;
-    //console.log(userName);
-    return fetch(`${API_BASE_URL}/bands`, {
+    return fetch(`${API_BASE_URL}/bands/`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -64,18 +62,25 @@ export const showCreatedBand = () => (dispatch, getState) => {
         });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
+export const deleteBand = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    alert("deleting");
+    return (
+        fetch(`${API_BASE_URL}/bands`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                 Authorization: `Bearer ${authToken}`
+            },
+        })
+            .then(res => normalizeResponseErrors(res))
+            .then(res => res.json())
+            .catch(err => {
+                const message =
+                        'Does not work'
+            })
+    );
+};
 
 
 

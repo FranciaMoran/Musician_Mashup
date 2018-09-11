@@ -18,7 +18,7 @@ export default function reducer(state = initialState, action) {
             error: null
         });
     } else if (action.type === GET_CREATED_BAND) {
-        console.log(action.bandData)
+        //console.log(action.bandData)
         return Object.assign({}, state, {
             bandData: action.bandData,
             error: null
