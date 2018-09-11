@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import searchUserByName from '../actions/searchActions'
+import {searchUserByName} from '../actions/searchActions'
 import {Field, reduxForm, focus} from 'redux-form';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import Input from './input';
@@ -10,11 +10,11 @@ import './searchSection.css'
 
 
 export class NameSearch extends React.Component {
-    /*onSubmit(values) {
+    onSubmit(values) {
         const {nameSearch} = values;
         const searchByName = {nameSearch};
         return this.props.dispatch(searchUserByName(searchByName))
-    }*/
+    }
 
 	render () {
 		return (

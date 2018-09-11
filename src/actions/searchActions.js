@@ -2,9 +2,9 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
 export const GET_USERS_BY_NAME = 'GET_USERS_BY_NAME';
-export const getUsersByName = userDataNames => ({
+export const getUsersByName = userData => ({
     type: GET_USERS_BY_NAME,
-    userDataNames
+    userData
 });
 
 export const GET_USERS_BY_NAME_ERROR = 'GET_USERS_BY_NAME_ERROR';
@@ -14,9 +14,9 @@ export const getUsersByNameError = error => ({
 });
 
 export const GET_USERS_BY_LOCATION = 'GET_USERS_BY_LOCATION';
-export const getUsersByLocation = userDataLocations => ({
+export const getUsersByLocation = userData => ({
     type: GET_USERS_BY_LOCATION,
-    userDataLocations
+    userData
 });
 
 export const GET_USERS_BY_LOCATION_ERROR = 'GET_USERS_BY_LOCATION_ERROR';
@@ -28,6 +28,7 @@ export const getUsersByLocationError = error => ({
 
 
 export const searchUserByName = () => (dispatch, getState) => {
+    alert("search name");
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/users`, {
         method: 'GET',
@@ -38,11 +39,33 @@ export const searchUserByName = () => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then((userDataNames) => dispatch(getUsersByName(userDataNames)))
+        .then((userData) => dispatch(getUsersByName(userData)))
         .catch(err => {
             dispatch(getUsersByNameError(err));
         });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const searchUserByLocation = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;

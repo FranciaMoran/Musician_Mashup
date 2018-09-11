@@ -47,7 +47,7 @@ export const createBand = createBandInfo => (dispatch, getState) => {
 
 export const showCreatedBand = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/bands/`, {
+    return fetch(`${API_BASE_URL}/bands`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
