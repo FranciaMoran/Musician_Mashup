@@ -1,7 +1,8 @@
  import {
     CREATING_BAND,
     CREATING_BAND_ERROR,
-    GET_CREATED_BAND
+    GET_CREATED_BAND,
+    GET_CREATED_BAND_ERROR
 } from '../actions/bandActions';
 
 const initialState = {
@@ -22,8 +23,11 @@ export default function reducer(state = initialState, action) {
             bandData: action.bandData,
             error: null
         });
-    } 
-    else if (action.type === CREATING_BAND_ERROR) {
+    }  else if (action.type === CREATING_BAND_ERROR) {
+        return Object.assign({}, state, {
+            error: action.error
+        });
+    }  else if (action.type === GET_CREATED_BAND_ERROR) {
         return Object.assign({}, state, {
             error: action.error
         });

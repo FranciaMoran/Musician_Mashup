@@ -10,7 +10,7 @@ const store = createStore(
     combineReducers({
         form: formReducer,
         auth: authReducer,
-        bandData: bandDataReducer
+        bandReducer: bandDataReducer
     }),
     applyMiddleware(thunk)
 );

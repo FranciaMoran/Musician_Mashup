@@ -25,28 +25,34 @@ export class BandSection extends React.Component {
     }
 
 	render () {
-       console.log(`BANDNAME: ${this.props.bandName}`)
+        console.log(this.props.bandData);
+        if (!this.props.bandData) {
+            return (
+                <div>
+            <p>loading</p>
+            </div>
+            )
+        }
 		if (!this.state.editing) {
 		return( 
 			<div>
              <h2 id="band-title">Band(s)</h2>
-             <p id="band-names">{this.props.bandName}</p>
+             {this.props.bandData.map(band => <p>{band.bandName}</p> )}
+             {this.props.bandData.map(band => <p>{band.memberOne}</p> )}
              <button onClick={() => this.setEditing(true)}>Create A New Band</button>
              </div>
 			);
 		}
 
 		return (
-            <div>
         <BandForm />
-        </div>
 		)
 	}
 }
 
 const mapStateToProps = state => {
     return {
-    bandName: state.bandData.bandName
+    bandData: state.bandReducer.bandData
     };
 };
 

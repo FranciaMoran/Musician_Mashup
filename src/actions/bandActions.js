@@ -25,10 +25,6 @@ export const getCreatedBandError = error => ({
     error
 });
 
-
-
-
-
 export const createBand = createBandInfo => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const userId = getState().auth.currentUser.id;
