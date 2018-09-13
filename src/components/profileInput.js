@@ -1,7 +1,9 @@
-import React from 'react';
+ import React from 'react';
+ import {connect} from 'react-redux';
+import requiresLogin from './requires-login';
 
-export default class Input extends React.Component {
-    componentDidUpdate(prevProps) {
+export class ProfileInput extends React.Component {
+ componentDidUpdate(prevProps) {
         if (!prevProps.meta.active && this.props.meta.active) {
             this.input.focus();
         }
@@ -38,4 +40,19 @@ export default class Input extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    const {currentUser} = state.auth;
+    return {
+        name: `${currentUser.firstName} ${currentUser.lastName}`,
+        id: `${currentUser.id}`,
+        location: `${currentUser.location}`,
+        instrument: `${currentUser.instrument}`,
+        genre: `${currentUser.genre}`,
+        cell: `${currentUser.cell}`,
+        email: `${currentUser.email}`
+    };
+};
+
+export default requiresLogin()(connect(mapStateToProps)(ProfileInput));
 

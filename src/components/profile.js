@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import ProfileForm from './profileForm'
 
+
 export class Profile extends React.Component {
     constructor(props) {
         super(props);

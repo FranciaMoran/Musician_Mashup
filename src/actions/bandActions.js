@@ -25,6 +25,19 @@ export const getCreatedBandError = error => ({
     error
 });
 
+export const DELETING_A_BAND = 'DELETING_A_BAND';
+export const deletingABand = bandData => ({
+    type: DELETING_A_BAND,
+    bandData
+});
+
+export const DELETING_A_BAND_ERROR = 'DELETING_A_BAND_ERROR';
+export const deletingABandError = error => ({
+    type: DELETING_A_BAND_ERROR,
+    error
+});
+
+
 export const createBand = createBandInfo => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const userId = getState().auth.currentUser.id;
@@ -65,95 +78,45 @@ export const showCreatedBand = () => (dispatch, getState) => {
 
 export const deleteBand = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
+    const bandId = getState().bandReducer.bandData._id;
     alert("deleting");
-    /*
-    return (
-        fetch(`${API_BASE_URL}/bands`, {
+    return( 
+        fetch(`${API_BASE_URL}/bands/${bandId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
                  Authorization: `Bearer ${authToken}`
             },
         })
-            .then(res => normalizeResponseErrors(res))
-            .then(res => res.json())
-            .catch(err => {
-                const message =
-                        'Does not work'
-            })
-    );*/
+           .then(res => normalizeResponseErrors(res))
+       .then(res => res.json())
+       .then(() => dispatch(deletingABand()))
+       .catch(err => {
+            dispatch(deletingABandError(err));
+        })
+    );
 };
-
-
-
 
 
 
 export const editBand = profileInfo => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    const userId = getState().auth.currentUser.id;
+   const authToken = getState().auth.authToken;
+    const bandId = getState().bandReducer.bandData._id;
     alert("editing");
-    /*
-    return (
-        fetch(`${API_BASE_URL}/users/${userId}`, {
+    return( 
+        fetch(`${API_BASE_URL}/bands/${bandId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
                  Authorization: `Bearer ${authToken}`
             },
-            body: JSON.stringify(profileInfo)
         })
-            .then(res => normalizeResponseErrors(res))
-            .then(res => res.json())
-            .catch(err => {
-                const message =
-                        'Does not work'
-            })
-    );*/
-};
-/*
-
-export const deleteBand = profileInfo => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    const userId = getState().auth.currentUser.id;
-    alert("two");
-    return (
-        fetch(`${API_BASE_URL}/users/${userId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                 Authorization: `Bearer ${authToken}`
-            },
-            body: JSON.stringify(profileInfo)
+        .then(res => normalizeResponseErrors(res))
+       .then(res => res.json())
+       .then(() => dispatch(deletingABand()))
+       .catch(err => {
+            dispatch(deletingABandError(err));
         })
-            .then(res => normalizeResponseErrors(res))
-            .then(res => res.json())
-            .catch(err => {
-                const message =
-                        'Does not work'
-            })
     );
 };
 
-export const deleteMember = profileInfo => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    const userId = getState().auth.currentUser.id;
-    alert("two");
-    return (
-        fetch(`${API_BASE_URL}/bands`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                 Authorization: `Bearer ${authToken}`
-            },
-            body: JSON.stringify(profileInfo)
-        })
-            .then(res => normalizeResponseErrors(res))
-            .then(res => res.json())
-            .catch(err => {
-                const message =
-                        'Does not work'
-            })
-    );
-};
-*/          

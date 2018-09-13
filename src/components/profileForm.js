@@ -4,7 +4,7 @@ import {editProfile} from '../actions/auth';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
-import Input from './input';
+import ProfileInput from './profileInput';
 import Profile from './profile'
 import './dashboard.css'
 
@@ -33,27 +33,27 @@ export class ProfileForm extends React.Component {
                 >
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="name">Name:</label>
-                <Field component={Input} type="text" name="name" placeholder="testing"/>
+                <Field component={ProfileInput} type="text" name="name"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="location">Location:</label>
-                <Field component={Input} type="text" name="location"/>
+                <Field component={ProfileInput} type="text" name="location"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="instrument">Instrument:</label>
-                <Field component={Input} type="text" name="instrument"/>
+                <Field component={ProfileInput} type="text" name="instrument"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="genre">Genre:</label>
-                <Field component={Input} type="text" name="genre"/>
+                <Field component={ProfileInput} type="text" name="genre"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="cell">Cell:</label>
-                <Field component={Input} type="text" name="cell"/>
+                <Field component={ProfileInput} type="text" name="cell"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="email">Email:</label>
-                <Field component={Input} type="text" name="email"/>
+                <Field component={ProfileInput} type="text" name="email"/>
                 </div>
                 <button
                 id="register-button"
@@ -70,7 +70,6 @@ export default reduxForm({
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('profile-form', Object.keys(errors)[0]))
 })(ProfileForm);
-
 
 
 

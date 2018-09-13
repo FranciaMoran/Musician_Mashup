@@ -13,7 +13,7 @@ export class BandSection extends React.Component {
     }
     
     deletingBand (event) {
-        //alert("delete");
+        //alert(bandData);
         this.props.dispatch(deleteBand())
     }
 
