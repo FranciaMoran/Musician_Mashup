@@ -47,6 +47,7 @@ export const createBand = createBandInfo => (dispatch, getState) => {
 
 export const showCreatedBand = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
+    //const userId = getState().auth.currentUser.id;
     return fetch(`${API_BASE_URL}/bands`, {
         method: 'GET',
         headers: {
@@ -65,6 +66,7 @@ export const showCreatedBand = () => (dispatch, getState) => {
 export const deleteBand = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     alert("deleting");
+    /*
     return (
         fetch(`${API_BASE_URL}/bands`, {
             method: 'DELETE',
@@ -79,18 +81,19 @@ export const deleteBand = () => (dispatch, getState) => {
                 const message =
                         'Does not work'
             })
-    );
+    );*/
 };
 
 
 
-/*
 
 
-export const editMembers = profileInfo => (dispatch, getState) => {
+
+export const editBand = profileInfo => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const userId = getState().auth.currentUser.id;
-    alert("two");
+    alert("editing");
+    /*
     return (
         fetch(`${API_BASE_URL}/users/${userId}`, {
             method: 'PUT',
@@ -106,7 +109,7 @@ export const editMembers = profileInfo => (dispatch, getState) => {
                 const message =
                         'Does not work'
             })
-    );
+    );*/
 };
 /*
 

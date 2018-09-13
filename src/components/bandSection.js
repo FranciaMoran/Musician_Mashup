@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {showCreatedBand} from '../actions/bandActions';
 import {deleteBand} from '../actions/bandActions';
+import {editBand} from '../actions/bandActions';
 import './bandSection.css'
 
 export class BandSection extends React.Component {
@@ -12,8 +13,13 @@ export class BandSection extends React.Component {
     }
     
     deletingBand (event) {
-        alert("test");
+        //alert("delete");
         this.props.dispatch(deleteBand())
+    }
+
+    editingBand (event) {
+        //alert("edit");
+        this.props.dispatch(editBand())
     }
 	  constructor(props) {
         super(props);
@@ -33,7 +39,7 @@ export class BandSection extends React.Component {
         //console.log(this.props.bandData);
         if (!this.props.bandData) {
             return (
-                <div>
+                <div className="band-section">
              <h2 id="band-title">Band(s)</h2>
               <button onClick={() => this.setEditing(true)}>Create A New Band</button>
               </div>
@@ -41,22 +47,22 @@ export class BandSection extends React.Component {
         }
  else if (this.state.editing) {
         return ( 
-            <div>
+            <div className="band-section">
              <h2 id="band-title">Create Band</h2>
              <BandForm />
              </div>
              )
          }
-
-		else if (!this.state.editing) {
+      else if (!this.state.editing && this.props.bandData) {
 		return ( 
-        <div>
+             <div className="band-section">
              <h2 id="band-title">Band(s)</h2>
-             {this.props.bandData.map((band, names) => <div key={names}>{band.bandName}
-             <button onClick={() => this.props.deletingBand}>Delete</button>
-             <p>{band.memberOne}</p></div>)}
+              <div>{this.props.bandData.map((band, names) => <div key={names}>{band.bandName}
+             <button onClick={e => this.deletingBand(e)}>Delete</button>
+             <button onClick={e => this.editingBand(e)}>Edit</button>
+             <p>{band.memberOne}</p></div>)}</div>
              <button onClick={() => this.setEditing(true)}>Create A New Band</button>
-              </div>
+             </div>
 			);
         }
 	}
