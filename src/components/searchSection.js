@@ -5,7 +5,7 @@ import NameSearch from './nameSearch'
 import LocationSearch from './locationSearch'
 import './searchSection.css'
 
-export default class SearchSection extends React.Component {
+export class SearchSection extends React.Component {
 
 	render () {
 		return (
@@ -17,3 +17,10 @@ export default class SearchSection extends React.Component {
 		)
 	}
 }
+
+const mapStateToProps = state => {
+    return {
+    };
+};
+
+export default requiresLogin()(connect(mapStateToProps)(SearchSection));

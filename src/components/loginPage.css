@@ -2,8 +2,8 @@
   background-color: #1f1f14;
   margin-right: 25%;
   margin-left: 25%;
-  margin-top: 3%;
-  height: 640px;
+  margin-top: 2%;
+  height: 600px;
   border-style: solid;
   border-width: 10px;
   border-color: #c61aff;
@@ -12,21 +12,17 @@
 
 #create-new-account {
   font-family: 'Questrial', sans-serif;
-  margin-left: 38%;
+  margin-left: 37%;
   margin-bottom: 5%;
   font-size: 25px;
   color: #cccc00;
 }
 
-li {
-  color: white;
-}
-
 #login-title {
   padding-top: 0;
   text-align: center;
-  margin-bottom: 8%;
-  font-size: 50px;
+  margin-bottom: 5%;
+  font-size: 35px;
   color: white;
 }
 
@@ -36,6 +32,351 @@ li {
   margin-bottom: 5%;
   padding-top: 0;
   color: white;
-  font-size: 40px;
+  font-size: 30px;
 }
 
+.login-inputs {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+#username-input {
+  display: block;
+  margin-bottom: 2%;
+}
+
+#username-label {
+  color: white;
+}
+
+#password-label {
+  color: white;
+}
+
+.form-error {
+  color: white;
+}
+
+#password-input {
+  display: block;
+  margin-bottom: 5%;
+}
+
+#login {
+  font-family: 'Questrial', sans-serif;
+  margin-left: 35%;
+  margin-right: 35%;
+  width: 20%;
+  font-size: 10px;
+  margin-bottom: 2%;
+  border-width: 5px;
+  border-color: #660033;
+  border-radius: 10px;
+  background-color: #b30086; 
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: 100;
+  box-shadow: 0px 1px 4px -2px #333;
+  text-shadow: 0px -1px #333;
+}
+
+#login:after{
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+}
+
+#login:hover {
+  color: #3366ff;
+  cursor: pointer;
+}
+
+#demo-login-title {
+  color: white;
+  text-align: center;
+}
+
+#demo-login-description {
+  color: white;
+  text-align: center;
+}
+
+.li {
+  color: white;
+  margin-left: 36%;
+}
+
+
+@media only screen and (max-width: 1030px) and (min-width: 1024px) {
+  #login-page {
+    background-color: #1f1f14;
+    margin-left: 7%;
+    margin-top: 3%;
+    height: 1200px;
+    width: 850px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #c61aff;
+    border-radius: 50px;
+  }
+
+  #login-title {
+    padding-top: 0;
+    text-align: center;
+    margin-bottom: 8%;
+    font-size: 75px;
+    color: white;
+  }
+
+  #login-name-of-app {
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+    margin-bottom: 5%;
+    padding-top: 0;
+    color: white;
+    font-size: 55px;
+  }
+
+  .login-inputs {
+    align-content: center;
+    margin-bottom: 8%;
+  }
+
+  #username {
+    height: 35px;
+    width: 350px; 
+  }
+
+  #password {
+    height: 35px;
+    width: 350px; 
+  }
+
+  #username-input {
+    display: block;
+    margin-bottom: 2%;
+  }
+
+  #username-label {
+    color: white;
+    font-size: 35px;
+  }
+
+  #password-label {
+    color: white;
+    font-size: 35px;
+  }
+
+  .form-error {
+    color: white;
+    font-size: 35px;
+  }
+
+  #password-input {
+    display: block;
+    margin-bottom: 5%;
+  }
+
+  #login {
+    font-family: 'Questrial', sans-serif;
+    margin-left: 29%;
+    width: 42%;
+    padding: 5px;
+    margin-bottom: 2%;
+    border-width: 5px;
+    border-color: #660033;
+    border-radius: 10px;
+    background-color: #b30086; 
+    text-decoration: none;
+    color: #fff;
+    font-size: 45px;
+    font-family: sans-serif;
+    font-weight: 100;
+    box-shadow: 0px 1px 4px -2px #333;
+    text-shadow: 0px -1px #333;
+  }
+
+  #login:after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+  }
+
+  #login:hover {
+    color: #3366ff;
+    cursor: pointer;
+  }
+
+   #create-new-account {
+    font-family: 'Questrial', sans-serif;
+    margin-left: 33%;
+    font-size: 40px;
+    color: #cccc00;
+  }
+
+  #demo-login-title {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10%;
+  }
+
+  #demo-login-description {
+    color: white;
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .li {
+    margin-left: 30%;
+    color: white;
+    font-size: 35px;
+  } 
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  #login-page {
+    background-color: #1f1f14;
+    margin-left: 7%;
+    margin-top: 3%;
+    height: 950px;
+    width: 850px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #c61aff;
+    border-radius: 50px;
+  }
+
+  #login-title {
+    padding-top: 0;
+    text-align: center;
+    margin-bottom: 8%;
+    font-size: 60px;
+    color: white;
+  }
+
+  #login-name-of-app {
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+    margin-bottom: 5%;
+    padding-top: 0;
+    color: white;
+    font-size: 40px;
+  }
+
+  .login-inputs {
+    align-content: center;
+    margin-bottom: 5%;
+  }
+
+  #username {
+    height: 30px;
+    width: 330px; 
+  }
+
+  #password {
+    height: 30px;
+    width: 330px; 
+  }
+
+  #username-input {
+    display: block;
+    margin-bottom: 2%;
+  }
+
+  #username-label {
+    color: white;
+    font-size: 30px;
+  }
+
+  #password-label {
+    color: white;
+    font-size: 30px;
+  }
+
+  .form-error {
+    color: white;
+    font-size: 30px;
+  }
+
+  #password-input {
+    display: block;
+    margin-bottom: 5%;
+  }
+
+  #login {
+    font-family: 'Questrial', sans-serif;
+    margin-left: 29%;
+    width: 42%;
+    padding: 5px;
+    margin-bottom: 2%;
+    border-width: 5px;
+    border-color: #660033;
+    border-radius: 10px;
+    background-color: #b30086; 
+    text-decoration: none;
+    color: #fff;
+    font-size: 45px;
+    font-family: sans-serif;
+    font-weight: 100;
+    box-shadow: 0px 1px 4px -2px #333;
+    text-shadow: 0px -1px #333;
+  }
+
+  #login:after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+  }
+
+  #login:hover {
+    color: #3366ff;
+    cursor: pointer;
+  }
+
+   #create-new-account {
+    font-family: 'Questrial', sans-serif;
+    margin-left: 36%;
+    font-size: 35px;
+    color: #cccc00;
+  }
+
+  #demo-login-title {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 7%;
+  }
+
+  #demo-login-description {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .li {
+    margin-left: 32%;
+    color: white;
+    font-size: 25px;
+  } 
+}
+
+@media only screen and (max-width: 415px) and (min-width: 411px) {
+}
+
+@media only screen and (max-width: 375px) and (min-width: 361px) {
+}
+
+@media only screen and (max-width: 360px) and (min-width: 321px) {
+}
+
+@media only screen and (max-width: 320px) {
+}

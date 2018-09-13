@@ -12,10 +12,11 @@ export function LoginPage(props) {
     return (
         <div className="home">
          <div id="login-page">
-            <h1 id="login-title">Login</h1>
+         <h1 id="login-name-of-app">Musician Mashup</h1>
+            <h2 id="login-title">Login</h2>
             <LoginForm />
             <Link to="/register" id="create-new-account">Create Account</Link>
-  <h3 id="demo-login">Demo Login</h3>
+  <h3 id="demo-login-title">Demo Login</h3>
                     <p id="demo-login-description">You can use this login to see an example of a profile and the home dashboard.</p>
                     <ul>
                         <li className="li">Username: Lennon11</li>

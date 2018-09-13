@@ -52,9 +52,9 @@ export class BandSection extends React.Component {
 		return ( 
         <div>
              <h2 id="band-title">Band(s)</h2>
-             {this.props.bandData.map((band, names) => <p key={names}>{band.bandName}
+             {this.props.bandData.map((band, names) => <div key={names}>{band.bandName}
              <button onClick={() => this.props.deletingBand}>Delete</button>
-             <p>{band.memberOne}<button onClick={() => this.props.deletingBand}>Delete</button></p></p>)}
+             <p>{band.memberOne}</p></div>)}
              <button onClick={() => this.setEditing(true)}>Create A New Band</button>
               </div>
 			);

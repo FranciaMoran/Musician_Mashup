@@ -12,7 +12,8 @@
   margin-right: 25%;
   margin-left: 25%;
   margin-top: 3%;
-  height: 640px;
+  height: 600px;
+  width: 700px;
   border-style: solid;
   border-width: 10px;
   border-color: #cccc00;
@@ -79,21 +80,152 @@ html {
   cursor: pointer;
 }
 
-#demo-login {
-  color: white;
-  text-align: center;
+
+@media only screen and (max-width: 1030px) and (min-width: 1024px) {
+  #name-of-app {
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+    margin-bottom: 5%;
+    padding-top: 3%;
+    color: white;
+    font-size: 70px;
+  }
+
+  #landing-page {
+    background-color: #1f1f14;
+    margin-left: 10%;
+    margin-top: 8%;
+    height: 1200px;
+    width: 800px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #cccc00;
+    border-radius: 50px;
+  }
+
+  #slogan {
+    text-align: center;
+    margin-bottom: 25%;
+    color: white;
+    font-size: 35px;
+  }
+
+  #app-explained {
+    text-align: center;
+    padding-right: 10%;
+    padding-left: 10%;
+    margin-bottom: 25%;
+    font-size: 35px;
+    color: white;
+  }
+
+  #get-started-button {
+    font-family: 'Questrial', sans-serif;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    height: 15%;
+    margin-bottom: 5%;
+    border-width: 5px;
+    border-color: #660033;
+    border-radius: 10px;
+    background-color: #400080; 
+    text-decoration: none;
+    color: #fff;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 100;
+    box-shadow: 0px 1px 4px -2px #333;
+    text-shadow: 0px -1px #333;
+  }
+
+  #get-started-button:after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+  }
+
+  #get-started-button:hover {
+    color: #3366ff;
+    cursor: pointer;
+  }
 }
 
-#demo-login-description {
-  color: white;
-  text-align: center;
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  #name-of-app {
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+    margin-bottom: 5%;
+    padding-top: 3%;
+    color: white;
+    font-size: 50px;
+  }
+
+  #landing-page {
+    background-color: #1f1f14;
+    margin-left: 10%;
+    margin-top: 8%;
+    height: 850px;
+    width: 600px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: #cccc00;
+    border-radius: 50px;
+  }
+
+  #slogan {
+    text-align: center;
+    margin-bottom: 25%;
+    color: white;
+    font-size: 35px;
+  }
+
+  #app-explained {
+    text-align: center;
+    padding-right: 10%;
+    padding-left: 10%;
+    margin-bottom: 25%;
+    font-size: 25px;
+    color: white;
+  }
+
+  #get-started-button {
+    font-family: 'Questrial', sans-serif;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+    height: 15%;
+    margin-bottom: 5%;
+    border-width: 5px;
+    border-color: #660033;
+    border-radius: 10px;
+    background-color: #400080; 
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 100;
+    box-shadow: 0px 1px 4px -2px #333;
+    text-shadow: 0px -1px #333;
+  }
+
+  #get-started-button:after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+  }
+
+  #get-started-button:hover {
+    color: #3366ff;
+    cursor: pointer;
+  }
 }
 
-.li {
-  margin-left: 35%;
-}
-
-@media only screen and (max-width: 414px) and (min-width: 361px) {
+@media only screen and (max-width: 415px) and (min-width: 411px) {
  #name-of-app {
   font-family: 'Questrial', sans-serif;
   text-align: center;
@@ -107,7 +239,7 @@ html {
   background-color: #1f1f14;
   margin-left: 10%;
   margin-top: 8%;
-  height: 640px;
+  height: 650px;
   width: 300px;
   border-style: solid;
   border-width: 10px;
@@ -115,21 +247,82 @@ html {
   border-radius: 50px;
 }
 
+#slogan {
+  text-align: center;
+  margin-bottom: 25%;
+  color: white;
+}
 
-html {
-  background-image: url(mmbackground2.jpg);
-   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+#app-explained {
+  text-align: center;
+  padding-right: 10%;
+  padding-left: 10%;
+  margin-bottom: 25%;
+  font-size: 15px;
+  color: white;
+}
+
+#get-started-button {
+  font-family: 'Questrial', sans-serif;
+  margin-left: 30%;
+  margin-right: 30%;
+  width: 40%;
+  height: 15%;
+  margin-bottom: 5%;
+  border-width: 5px;
+  border-color: #660033;
+  border-radius: 10px;
+  background-color: #400080; 
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  font-family: sans-serif;
+  font-weight: 100;
+  box-shadow: 0px 1px 4px -2px #333;
+  text-shadow: 0px -1px #333;
+}
+
+#get-started-button:after{
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+}
+
+#get-started-button:hover {
+  color: #3366ff;
+  cursor: pointer;
+}
+}
+
+@media only screen and (max-width: 375px) and (min-width: 361px) {
+ #name-of-app {
+  font-family: 'Questrial', sans-serif;
+  text-align: center;
+  margin-bottom: 3%;
+  padding-top: 3%;
+  color: white;
+  font-size: 40px;
+}
+
+#landing-page {
+  background-color: #1f1f14;
+  margin-left: 8%;
+  margin-top: 8%;
+  height: 610px;
+  width: 300px;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #cccc00;
+  border-radius: 50px;
 }
 
 #slogan {
   text-align: center;
   margin-bottom: 25%;
   color: white;
+  font-size: 25px;
 }
 
 #app-explained {
@@ -174,20 +367,6 @@ html {
   color: #3366ff;
   cursor: pointer;
 }
-
-#demo-login {
-  color: white;
-  text-align: center;
-}
-
-#demo-login-description {
-  color: white;
-  text-align: center;
-}
-
-.li {
-  margin-left: 35%;
-}
 }
 
 @media only screen and (max-width: 360px) and (min-width: 321px) {
@@ -210,17 +389,6 @@ html {
   border-width: 10px;
   border-color: #cccc00;
   border-radius: 50px;
-}
-
-
-html {
-  background-image: url(mmbackground2.jpg);
-   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 #slogan {
@@ -272,20 +440,6 @@ html {
   color: #3366ff;
   cursor: pointer;
 }
-
-#demo-login {
-  color: white;
-  text-align: center;
-}
-
-#demo-login-description {
-  color: white;
-  text-align: center;
-}
-
-.li {
-  margin-left: 35%;
-}
 }
 
 @media only screen and (max-width: 320px) {
@@ -308,17 +462,6 @@ html {
   border-width: 10px;
   border-color: #cccc00;
   border-radius: 50px;
-}
-
-
-html {
-  background-image: url(mmbackground2.jpg);
-   -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 #slogan {
@@ -369,19 +512,5 @@ html {
 #get-started-button:hover {
   color: #3366ff;
   cursor: pointer;
-}
-
-#demo-login {
-  color: white;
-  text-align: center;
-}
-
-#demo-login-description {
-  color: white;
-  text-align: center;
-}
-
-.li {
-  margin-left: 35%;
 }
 }

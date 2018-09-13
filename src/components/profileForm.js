@@ -15,8 +15,13 @@ export class ProfileForm extends React.Component {
 	onSubmit(values) {
         const {name, location, instrument, genre, cell, email} = values;
         const profileInfo = {name, location, instrument, genre, cell, email};
-        return this.props.dispatch(editProfile(profileInfo))
+        this.props.dispatch(editProfile(profileInfo))
     }
+
+    /*goBackToDashboard(event) {
+        event.preventDefault();
+        this.props.push(`/dashboard`);
+    }*/
 
 	render() {
 		return (

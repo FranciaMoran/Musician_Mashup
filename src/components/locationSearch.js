@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {Field, reduxForm, focus} from 'redux-form';
+import {searchUserByLocation} from '../actions/searchActions'
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import Input from './input';
 import './searchSection.css'
@@ -10,9 +11,9 @@ import './searchSection.css'
 
 export class LocationSearch extends React.Component {
     onSubmit(values) {
-        const {nameSearch} = values;
-        const searchByName = {nameSearch};
-        return this.props.dispatch()
+        const {locationSearch} = values;
+        const searchByLocation = {locationSearch};
+        return this.props.dispatch(searchUserByLocation(searchByLocation))
     }
 
 	render () {
@@ -23,7 +24,7 @@ export class LocationSearch extends React.Component {
                     this.onSubmit(values)
                 )}>
         <label className="labels">By Location:</label>
-        <Field component={Input} type="text" name="nameSearch"/>
+        <Field component={Input} type="text" name="locationSearch"/>
          <button
                     type="submit">
                     Search

@@ -27,8 +27,8 @@ export const getUsersByLocationError = error => ({
 
 
 
-export const searchUserByName = () => (dispatch, getState) => {
-    alert("search name");
+export const searchUserByName = searchByName => (dispatch, getState) => {
+    console.log(searchByName);
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/users`, {
         method: 'GET',
@@ -46,28 +46,8 @@ export const searchUserByName = () => (dispatch, getState) => {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-export const searchUserByLocation = () => (dispatch, getState) => {
+export const searchUserByLocation = searchByLocation => (dispatch, getState) => {
+    console.log(searchByLocation);
     const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/users`, {
         method: 'GET',
@@ -78,11 +58,12 @@ export const searchUserByLocation = () => (dispatch, getState) => {
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
-        .then((userDataLocations) => dispatch(getUsersByLocation(userDataLocations)))
+        .then((userData) => dispatch(getUsersByLocation(userData)))
         .catch(err => {
             dispatch(getUsersByLocationError(err));
         });
 }
+
 
 
 
