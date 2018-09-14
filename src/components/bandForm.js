@@ -4,7 +4,7 @@ import {createBand} from '../actions/bandActions';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
-import Input from './input';
+import Input from './Inputs/input';
 import Profile from './profile'
 import './dashboard.css'
 

@@ -4,7 +4,7 @@ import requiresLogin from './requires-login';
 import {searchUserByName} from '../actions/searchActions'
 import {Field, reduxForm, focus} from 'redux-form';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
-import Input from './input';
+import Input from './Inputs/input';
 import './searchSection.css'
 
 

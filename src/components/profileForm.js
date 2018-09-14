@@ -4,7 +4,12 @@ import {editProfile} from '../actions/auth';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
-import ProfileInput from './profileInput';
+import ProfileInputFieldOne from './Inputs/profileInputFieldOne';
+import ProfileInputFieldTwo from './Inputs/profileInputFieldTwo';
+import ProfileInputFieldThree from './Inputs/profileInputFieldThree';
+import ProfileInputFieldFour from './Inputs/profileInputFieldFour';
+import ProfileInputFieldFive from './Inputs/profileInputFieldFive';
+import ProfileInputFieldSix from './Inputs/profileInputFieldSix';
 import Profile from './profile'
 import './dashboard.css'
 
@@ -33,27 +38,27 @@ export class ProfileForm extends React.Component {
                 >
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="name">Name:</label>
-                <Field component={ProfileInput} type="text" name="name"/>
+                <Field component={ProfileInputFieldOne} type="text" name="name"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="location">Location:</label>
-                <Field component={ProfileInput} type="text" name="location"/>
+                <Field component={ProfileInputFieldTwo} type="text" name="location"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="instrument">Instrument:</label>
-                <Field component={ProfileInput} type="text" name="instrument"/>
+                <Field component={ProfileInputFieldThree} type="text" name="instrument"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="genre">Genre:</label>
-                <Field component={ProfileInput} type="text" name="genre"/>
+                <Field component={ProfileInputFieldFour} type="text" name="genre"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="cell">Cell:</label>
-                <Field component={ProfileInput} type="text" name="cell"/>
+                <Field component={ProfileInputFieldFive} type="text" name="cell"/>
                 </div>
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="email">Email:</label>
-                <Field component={ProfileInput} type="text" name="email"/>
+                <Field component={ProfileInputFieldSix} type="text" name="email"/>
                 </div>
                 <button
                 id="register-button"
