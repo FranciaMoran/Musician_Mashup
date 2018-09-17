@@ -11,6 +11,7 @@ export const setAuthToken = authToken => ({
     authToken
 });
 
+
 export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const clearAuth = () => ({
     type: CLEAR_AUTH
@@ -33,11 +34,12 @@ export const authError = error => ({
     error
 });
 
-const storeAuthInfo = (res, dispatch) => {
+export const storeAuthInfo = (res, dispatch) => {
    // console.log(res);
     const decodedToken = jwtDecode(res.authToken);
-    //console.log(decodedToken);
+    console.log(decodedToken);
     dispatch(setAuthToken(res.authToken));
+   // dispatch(setAuthToken(res.authToken));
     dispatch(authSuccess(res.user));
    //dispatch(creatingBand(res.user.name));
     saveAuthToken(res.authToken);
@@ -109,6 +111,10 @@ export const editProfile = profileInfo => (dispatch, getState) => {
         })
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
+            .then(res => {
+                dispatch(authSuccess(res));
+                window.location.reload();
+            })
             .catch(err => {
                 const message =
                         'Does not work'

@@ -11,9 +11,9 @@ import './searchSection.css'
 
 export class NameSearch extends React.Component {
     onSubmit(values) {
-        const {nameSearch} = values;
-        const searchByName = {nameSearch};
-        return this.props.dispatch(searchUserByName(searchByName))
+        const {name} = values;
+        const userName = {name};
+        return this.props.dispatch(searchUserByName(userName))
     }
 
 	render () {
@@ -24,7 +24,7 @@ export class NameSearch extends React.Component {
                     this.onSubmit(values)
                 )}>
         <label className="labels">By Name:</label>
-        <Field component={Input} type="text" name="nameSearch"/>
+        <Field component={Input} type="text" name="name"/>
          <button
                     type="submit">
                     Search

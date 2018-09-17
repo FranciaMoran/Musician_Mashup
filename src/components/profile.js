@@ -1,7 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
-import ProfileForm from './profileForm'
+import ProfileForm from './profileForm';
+import './dashboard.css'
 
 
 export class Profile extends React.Component {
@@ -25,7 +26,7 @@ export class Profile extends React.Component {
   return (
     <div>
             <div id="profile">
-                            <h2>Profile</h2>
+                            <h2 id="profile-title">Profile</h2>
                             <div className="lines">
                                 <label>Name: </label>
                                 <p className="dashboard-name">{this.props.name}</p>
@@ -42,12 +43,15 @@ export class Profile extends React.Component {
                                 <label>Genre(s) of Music: </label>
                                 <p>{this.props.genre}</p>
                             </div>
-                            <p id="contact">Your Contact Info</p>
+                             <div className="lines">
                             <label>Cell: </label>
                             <p>{this.props.cell}</p>
+                            </div>
+                             <div className="lines">
                             <label>Email: </label>
                             <p>{this.props.email}</p>
-                            <button type="button" onClick={() => this.setEditing(true)}>Edit Profile</button>
+                            </div>
+                            <button id="profile-edit-button" type="button" onClick={() => this.setEditing(true)}>Edit Profile</button>
                         </div>
                         </div>
                      );

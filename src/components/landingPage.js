@@ -2,14 +2,19 @@ import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
 import './landingPage.css';
 import LoginForm from './loginForm';
+import {connect} from 'react-redux';
 
-export default class LandingPage extends React.Component {
+export class LandingPage extends React.Component {
      goToLogin(event) {
         event.preventDefault();
         this.props.history.push(`/loginscreen`);
     }
    
    render() {
+    console.log(this.props.loggedIn)
+    if (this.props.loggedIn) {
+        this.props.history.push(`/dashboard`);
+    }
     return (
         <div>
             <div id="landing-page">
@@ -23,6 +28,12 @@ export default class LandingPage extends React.Component {
 }
 }
 
+
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null
+});
+
+export default connect(mapStateToProps)(LandingPage);
 
 
 
