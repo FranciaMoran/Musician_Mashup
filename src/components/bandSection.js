@@ -17,10 +17,6 @@ export class BandSection extends React.Component {
         this.props.dispatch(deleteBand())
     }
 
-    editingBand (event) {
-        //alert("edit");
-        this.props.dispatch(editBand())
-    }
 	  constructor(props) {
         super(props);
         this.state = {
@@ -59,7 +55,6 @@ export class BandSection extends React.Component {
              <h2 id="band-title">Band(s)</h2>
               <div>{this.props.bandData.map((band, names) => <div key={names}>{band.bandName}
              <button onClick={e => this.deletingBand(e)}>Delete</button>
-             <button onClick={e => this.editingBand(e)}>Edit</button>
              <p>{band.memberOne}</p></div>)}</div>
              <button onClick={() => this.setEditing(true)}>Create A New Band</button>
              </div>

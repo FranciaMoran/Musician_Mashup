@@ -26,31 +26,11 @@ export const getUsersByLocationError = error => ({
 });
 
 
-
-export const searchUserByName = userName => (dispatch, getState) => {
-    console.log(userName);
+export const searchUserByLocation = location => (dispatch, getState) => {
+    console.log(location);
     const authToken = getState().auth.authToken;
-    const query = '?name=John'
-    return fetch(`${API_BASE_URL}/users` + query, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-             Authorization: `Bearer ${authToken}`
-        },
-    })
-        .then(res => normalizeResponseErrors(res))
-        .then(res => res.json())
-        .then((userData) => dispatch(getUsersByName(userData)))
-        .catch(err => {
-            dispatch(getUsersByNameError(err));
-        });
-}
-
-
-export const searchUserByLocation = searchByLocation => (dispatch, getState) => {
-    console.log(searchByLocation);
-    const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/users`, {
+    const query = location
+    return fetch(`${API_BASE_URL}/users` + '?location=' + query, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

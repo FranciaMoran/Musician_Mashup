@@ -11,9 +11,9 @@ import './searchSection.css'
 
 export class LocationSearch extends React.Component {
     onSubmit(values) {
-        const {locationSearch} = values;
-        const searchByLocation = {locationSearch};
-        return this.props.dispatch(searchUserByLocation(searchByLocation))
+        const {location} = values;
+        //const searchByLocation = {location};
+        return this.props.dispatch(searchUserByLocation(location))
     }
 
 	render () {
@@ -24,7 +24,7 @@ export class LocationSearch extends React.Component {
                     this.onSubmit(values)
                 )}>
         <label className="labels">By Location:</label>
-        <Field component={Input} type="text" name="locationSearch"/>
+        <Field component={Input} type="text" name="location"/>
          <button
                     type="submit">
                     Search

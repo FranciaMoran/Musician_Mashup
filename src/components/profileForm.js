@@ -45,7 +45,6 @@ export class ProfileForm extends React.Component {
                     this.onSubmit(values)
                 )}
                 >
-                
                 <div className="lines">
                 <label className="create-account-labels" htmlFor="location">Location:</label>
                 <Field component={ProfileInputFieldTwo} type="text" name="location"/>
