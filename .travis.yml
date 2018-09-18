@@ -3,8 +3,9 @@
  cache:
    directories:
      - node_modules
+env:
+  - CI=true
 deploy:
   provider: heroku
-  api_key:
-    secure: db09bbe3-c0c6-41cb-8047-f1e88f42e92c
+  api_key: db09bbe3-c0c6-41cb-8047-f1e88f42e92c
   app: glacial-ridge-95298
