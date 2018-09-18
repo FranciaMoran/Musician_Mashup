@@ -4,7 +4,6 @@ import {LandingPage} from './LandingPage';
 import {shallow, mount} from 'enzyme';
 
 
-
 describe('<LandingPage />', () => {
     it('Renders without crashing', () => {
         shallow(<LandingPage />);
