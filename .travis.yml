@@ -5,7 +5,6 @@ cache:
     - node_modules
 deploy:
   provider: heroku
-  skip_cleanup: true
   api_key:
     secure: db09bbe3-c0c6-41cb-8047-f1e88f42e92c
   app: glacial-ridge-95298
