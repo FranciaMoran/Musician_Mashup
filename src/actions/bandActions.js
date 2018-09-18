@@ -26,9 +26,9 @@ export const getCreatedBandError = error => ({
 });
 
 export const DELETING_A_BAND = 'DELETING_A_BAND';
-export const deletingABand = bandData => ({
+export const deletingABand = id => ({
     type: DELETING_A_BAND,
-    bandData
+    id
 });
 
 export const DELETING_A_BAND_ERROR = 'DELETING_A_BAND_ERROR';
@@ -78,13 +78,13 @@ export const showCreatedBand = () => (dispatch, getState) => {
         });
 };
 
-export const deleteBand = () => (dispatch, getState, id) => {
+export const deleteBand = (id) => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
-    const bandId = getState().bandReducer.bandData.id
+    //const bandId = getState().bandReducer.bandData.id
     console.log(getState().bandReducer.bandData);
     alert("deleting");
     return( 
-        fetch(`${API_BASE_URL}/bands/${bandId}`, {
+        fetch(`${API_BASE_URL}/bands/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ export const deleteBand = () => (dispatch, getState, id) => {
         })
            .then(res => normalizeResponseErrors(res))
        .then(res => res.json())
-       .then(() => dispatch(deletingABand()))
+       .then(() => dispatch(deletingABand(id)))
        .catch(err => {
             dispatch(deletingABandError(err));
         })
@@ -101,25 +101,4 @@ export const deleteBand = () => (dispatch, getState, id) => {
 };
 
 
-
-export const editBand = profileInfo => (dispatch, getState) => {
-   const authToken = getState().auth.authToken;
-    const bandId = getState().bandReducer.bandData._id;
-    alert("editing");
-    return( 
-        fetch(`${API_BASE_URL}/bands/${bandId}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                 Authorization: `Bearer ${authToken}`
-            },
-        })
-        .then(res => normalizeResponseErrors(res))
-       .then(res => res.json())
-       .then(() => dispatch(deletingABand()))
-       .catch(err => {
-            dispatch(deletingABandError(err));
-        })
-    );
-};
 

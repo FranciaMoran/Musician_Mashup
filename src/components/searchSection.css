@@ -19,6 +19,7 @@
 }
 
 #by-location {
+  color: white;
 }
 
 @media only screen and (max-width: 1030px) and (min-width: 1024px) {

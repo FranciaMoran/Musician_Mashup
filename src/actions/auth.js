@@ -129,23 +129,3 @@ export const editProfile = profileInfo => (dispatch, getState) => {
             })
             )
 };
-/*
-export const showEditedProfile = () => (dispatch, getState) => {
-    const authToken = getState().auth.authToken;
-    const userId = getState().auth.currentUser.id;
-    return fetch(`${API_BASE_URL}/users${userId}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-             Authorization: `Bearer ${authToken}`
-        },
-    })
-       .then(res => normalizeResponseErrors(res))
-       .then(res => res.json())
-       .then((currentUser) => dispatch(authSuccess(currentUser)))
-       .catch(err => {
-            dispatch(authError(err));
-        });
-}; */
-
-
