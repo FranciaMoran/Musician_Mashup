@@ -19,7 +19,8 @@ export class ProfileForm extends React.Component {
         const {name, location, instrument, genre, cell, email} = values;
         const profileInfo = {name, location, instrument, genre, cell, email};
         this.props.dispatch(editProfile(profileInfo))
-        //this.props.history.push(`/dashboard`);
+        console.log(this.props);
+        this.props.setEditing(false);
     }
 /*
     constructor(props) {

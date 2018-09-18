@@ -5,6 +5,7 @@ import LoginForm from './loginForm';
 import {connect} from 'react-redux';
 
 export class LandingPage extends React.Component {
+
      goToLogin(event) {
         event.preventDefault();
         this.props.history.push(`/loginscreen`);
@@ -27,7 +28,6 @@ export class LandingPage extends React.Component {
     );
 }
 }
-
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null

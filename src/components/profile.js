@@ -65,7 +65,7 @@ export class Profile extends React.Component {
    return (
     <div>
     <h2 id="profile">Profile</h2>
-    <ProfileForm />       
+    <ProfileForm setEditing={editing => this.setEditing(editing)}/>       
     </div>
    )
 }

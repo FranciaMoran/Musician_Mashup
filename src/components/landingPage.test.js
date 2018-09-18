@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import LandingPage from './LandingPage';
+import {LandingPage} from './LandingPage';
 import {shallow, mount} from 'enzyme';
+
 
 
 describe('<LandingPage />', () => {

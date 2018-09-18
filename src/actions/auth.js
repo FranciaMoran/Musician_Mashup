@@ -11,11 +11,17 @@ export const setAuthToken = authToken => ({
     authToken
 });
 
-/*export const GET_USER_PROFILE = 'GET_USER_PROFILE';
-export const getUserProfile = currentUser => ({
-    type: GET_USER_PROFILE,
+export const EDIT_PROFILE_SUCCESS = 'EDIT_PROFILE_SUCCESS';
+export const editProfileSuccess = data => ({
+    type: EDIT_PROFILE_SUCCESS,
+    data
+});
+
+export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS';
+export const updateUserSuccess = currentUser => ({
+    type: UPDATE_USER_SUCCESS,
     currentUser
-});*/
+});
 
 export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const clearAuth = () => ({
@@ -116,17 +122,14 @@ export const editProfile = profileInfo => (dispatch, getState) => {
         })
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
-            .then(res => {
-                window.location.reload();
-                dispatch(authSuccess(res.user));
-            })
+            .then(data => dispatch(editProfileSuccess(data)))
             .catch(err => {
                 const message =
                         'Does not work'
             })
-    );
+            )
 };
-
+/*
 export const showEditedProfile = () => (dispatch, getState) => {
     const authToken = getState().auth.authToken;
     const userId = getState().auth.currentUser.id;
@@ -143,6 +146,6 @@ export const showEditedProfile = () => (dispatch, getState) => {
        .catch(err => {
             dispatch(authError(err));
         });
-};
+}; */
 
 
