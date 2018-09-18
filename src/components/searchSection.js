@@ -4,10 +4,10 @@ import requiresLogin from './requires-login';
 import LocationSearch from './locationSearch'
 import './searchSection.css'
 
-export class SearchSection extends React.Component {
+export default class SearchSection extends React.Component {
 
 	render () {
-        if (!this.props.userData){
+        if (!this.props.userData) {
 		return (
         <div id="SearchSection">
         <h2 id="search-title">Search Musicians Here!</h2>
@@ -24,11 +24,3 @@ export class SearchSection extends React.Component {
         )
 	}
 }
-
-const mapStateToProps = state => {
-    return {
-        location: state.userReducer.userData.location
-    };
-};
-
-export default requiresLogin()(connect(mapStateToProps)(SearchSection));

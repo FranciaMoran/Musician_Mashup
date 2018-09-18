@@ -23,8 +23,8 @@ export class LocationSearch extends React.Component {
         onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
                 )}>
-        <label className="labels">By Location:</label>
-        <Field component={Input} type="text" name="location"/>
+        <label id="location-label">By Location:</label>
+        <Field component={Input} type="text" name="location" id="location-input"/>
          <button
                     type="submit">
                     Search

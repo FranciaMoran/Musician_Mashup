@@ -26,8 +26,8 @@ export class Dashboard extends React.Component {
             <button id="log-out" onClick={() => this.logOut()}>Log out</button>
                  <h1 id="dashboard-title">My Dashboard</h1>
                    <Profile/>
+                   <button id="search-musicians" onClick={e => this.goToSearch(e)}>Search Musicians</button>
     <BandSection />
-    <button onClick={e => this.goToSearch(e)}>Search Musicians</button>
             </div>
             </div>
         );

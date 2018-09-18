@@ -2,10 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from './requires-login';
 import ProfileForm from './profileForm';
+import {showEditedProfile} from '../actions/auth'
 import './dashboard.css'
 
 
 export class Profile extends React.Component {
+    /*componentDidMount() {
+        this.props.dispatch(showEditedProfile());
+    }*/
+
     constructor(props) {
         super(props);
         this.state = {

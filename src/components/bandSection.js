@@ -12,9 +12,9 @@ export class BandSection extends React.Component {
         this.props.dispatch(showCreatedBand());
     }
     
-    deletingBand (event) {
+    deletingBand (event, id) {
         //alert(bandData);
-        this.props.dispatch(deleteBand())
+        this.props.dispatch(deleteBand(id))
     }
 
 	  constructor(props) {
@@ -53,10 +53,10 @@ export class BandSection extends React.Component {
 		return ( 
              <div className="band-section">
              <h2 id="band-title">Band(s)</h2>
-              <div>{this.props.bandData.map((band, names) => <div key={names}>{band.bandName}
-             <button onClick={e => this.deletingBand(e)}>Delete</button>
-             <p>{band.memberOne}</p></div>)}</div>
-             <button onClick={() => this.setEditing(true)}>Create A New Band</button>
+             <button id="create-new-band" onClick={() => this.setEditing(true)}>Create A New Band</button>
+              <div>{this.props.bandData.map((band, names) => <div className="each-band" key={names}>{band.bandName}
+              <button className="delete-button" onClick={e => this.deletingBand(e, band._id)}>Delete</button>
+             <p>Members: {band.memberOne}</p></div>)}</div>
              </div>
 			);
         }

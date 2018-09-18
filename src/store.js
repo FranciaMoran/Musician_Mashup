@@ -21,8 +21,6 @@ const store = createStore(
 
 const authToken = loadAuthToken();
 if (authToken) {
-   // console.log("gotauthtoken");
-   // console.log(authToken);
     const token = authToken;
     const decodedToken = jwtDecode(token);
    // console.log(decodedToken);

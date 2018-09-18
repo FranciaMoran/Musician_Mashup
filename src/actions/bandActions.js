@@ -51,7 +51,9 @@ export const createBand = createBandInfo => (dispatch, getState) => {
         body: JSON.stringify(createBandInfo)
     })
        .then(res => normalizeResponseErrors(res))
-       .then(res => res.json())
+       .then(res => {
+        window.location.reload();
+       })
        .then((bandData) => dispatch(creatingBand(bandData)))
        .catch(err => {
             dispatch(creatingBandError(err));
@@ -76,9 +78,10 @@ export const showCreatedBand = () => (dispatch, getState) => {
         });
 };
 
-export const deleteBand = () => (dispatch, getState) => {
+export const deleteBand = () => (dispatch, getState, id) => {
     const authToken = getState().auth.authToken;
-    const bandId = getState().bandReducer.bandData._id;
+    const bandId = getState().bandReducer.bandData.id
+    console.log(getState().bandReducer.bandData);
     alert("deleting");
     return( 
         fetch(`${API_BASE_URL}/bands/${bandId}`, {

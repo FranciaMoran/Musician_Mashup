@@ -6,7 +6,7 @@ import requiresLogin from './requires-login';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 import Input from './Inputs/input';
 import Profile from './profile'
-import './dashboard.css'
+import './bandSection.css'
 
 
 
@@ -31,8 +31,9 @@ export class BandForm extends React.Component {
                 <Field component={Input} type="text" name="bandName"/>
                 </div>
                 <button
+                id="created-band-button"
                     type="submit">
-                    Confirm Changes
+                    Confirm
                 </button>
             </form>
 			)
