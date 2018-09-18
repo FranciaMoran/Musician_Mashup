@@ -19,8 +19,8 @@ export class SearchSection extends React.Component {
         <div id="SearchSection">
         <h2 id="search-title">Search Musicians Here!</h2>
         <LocationSearch />
-        <div>{this.props.userData.map((user, locations) => <div className="each-band" key={locations}>{user.location}
-             <p>Members: {user.firstName}</p></div>)}</div>
+        <div>{this.props.userData.map((user, locations) => <div className="each-user" key={locations}>Location: {user.location}
+             <p>Name: {user.firstName}</p></div>)}</div>
         </div>
         )
 	}
