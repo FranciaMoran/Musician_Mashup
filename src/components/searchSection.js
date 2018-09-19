@@ -11,6 +11,7 @@ export class SearchSection extends React.Component {
 		return (
         <div id="SearchSection">
         <h2 id="search-title">Search Musicians Here!</h2>
+        <p className="note">developer's note: (Two user accounts list Chicago as their location)</p> 
         <LocationSearch />
         </div>
 		)
@@ -18,7 +19,7 @@ export class SearchSection extends React.Component {
             return (
         <div id="SearchSection">
         <h2 id="search-title">Search Musicians Here!</h2>
-        <p>developer's note: (Two user accounts list Chicago as their location)</p> 
+        <p className="note">developer's note: (Two user accounts list Chicago as their location)</p> 
         <LocationSearch />
         <div>{this.props.userData.map((user, locations) => <div className="each-user" key={locations}>Location: {user.location}
              <p>Name: {user.firstName}</p></div>)}</div>
