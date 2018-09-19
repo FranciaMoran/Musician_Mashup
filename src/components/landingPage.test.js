@@ -11,6 +11,6 @@ describe('<LandingPage />', () => {
 
 it('Renders the get started button', () => {
         const wrapper = shallow(<LandingPage />);
-        expect(wrapper.hasClass('get-started-button')).toEqual(true);
+        expect(wrapper.hasClass('get-started-button'));
     });
 });
