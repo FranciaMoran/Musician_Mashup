@@ -46,7 +46,7 @@ html {
   color: white;
 }
 
-#get-started-button {
+.get-started-button {
   font-family: 'Questrial', sans-serif;
   margin-left: 35%;
   margin-right: 35%;
@@ -65,7 +65,7 @@ html {
   text-shadow: 0px -1px #333;
 }
 
-#get-started-button:after{
+.get-started-button:after{
   content: '';
   position: absolute;
   top: 2px;
@@ -73,7 +73,7 @@ html {
   background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
 }
 
-#get-started-button:hover {
+.get-started-button:hover {
   color: #3366ff;
   cursor: pointer;
 }
