@@ -5,7 +5,7 @@ Musician Mashup is an app which utilizes React and Node to create a hub for musi
 
 The functionality of the Musician Mashup app is accomplished with use of: React, CSS, JavaScript, Mlab, Node.js and heroku.
 
-The repository which holds the node.js code for this project can be viewed here.
+The repository which holds the node.js code for this project can be viewed here: https://github.com/FranciaMoran/Musician_Mashup_Apis/tree/master
 
 ## Landing Page
 
